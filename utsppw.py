@@ -17,12 +17,12 @@ import re
 
 @st.cache(allow_output_mutation=True)
 def load_data(file):
-    data = pd.read_csv(file)
+    data = pd.read_csv(dataPTATrunojoyo.csv)
     return data
 
 file = st.file_uploader("Choose a CSV file", type=["csv"])
 if file is not None:
-    data = load_data(file)
+    data = load_data(dataPTATrunojoyo.csv)
     
 def preprocess_text(text):
     text = re.sub(r'\W+|\d+', ' ', text)
