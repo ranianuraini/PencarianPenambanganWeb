@@ -1,0 +1,2286 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Crawling Berita Online &#8212; Pencarian &amp; Penambangan Web</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Crawling Berita Online';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Implementasi Reduksi Dimensi PTA Dataset" href="Reduksi%20Dimensi%20Feature.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Pencarian & Penambangan Web - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Pencarian & Penambangan Web - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Crawling%20PTA%20Trunojoyo.html">Crawling Website PTA Trunojoyo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Preprocessing%20Hasil%20Crawling.html">Preprocessing Data Text</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Reduksi%20Dimensi%20Feature.html">Implementasi Reduksi Dimensi PTA Dataset</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Berita Online</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ranianuraini/PencarianPenambanganWeb" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ranianuraini/PencarianPenambanganWeb/issues/new?title=Issue%20on%20page%20%2FCrawling Berita Online.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Crawling Berita Online.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crawling Berita Online</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-berita-online">
+<h1>Crawling Berita Online<a class="headerlink" href="#crawling-berita-online" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#melakukan web scraping pada halaman berita yang berasal dari URL</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="c1"># Unduh konten halaman web berita</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.antaranews.com/berita/3799593/ari-lesmana-fourtwnty-ambil-bagian-di-film-budi-pekerti&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+
+<span class="c1"># Parsing halaman web menggunakan BeautifulSoup</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ekstraksi teks dari elemen-elemen yang berisi berita</span>
+<span class="n">article</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;post-content clearfix&quot;</span><span class="p">)</span>  <span class="c1"># Sesuaikan dengan struktur HTML halaman web berita</span>
+
+<span class="c1"># Periksa apakah elemen article ada sebelum mencoba mengambil teksnya</span>
+<span class="k">if</span> <span class="n">article</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">article_text</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+
+    <span class="c1"># Tokenisasi teks menjadi kalimat menggunakan nltk</span>
+    <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>  <span class="c1"># Pastikan Anda sudah mengunduh tokenisasi kalimat nltk</span>
+    <span class="n">sentences</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">article_text</span><span class="p">)</span>
+
+    <span class="c1"># Cetak kalimat-kalimat</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elemen berita tidak ditemukan&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Film menurutku salah satu hal yang menyenangkanJakarta (ANTARA) - Salah satu anggota dari grup Fourtwnty, Ari Lesmana, ambil bagian di film “Budi Pekerti” garapan sutradara Wregas Bhanuteja sebagai salah satu pemeran pendukung di dalamnya.
+“Ditawarin, ini menarik.
+Jadi mau,” kata Ari saat ditemui dalam acara penayangan perdana film “Budi Pekerti” di Plaza Senayan, Jakarta Pusat, Senin.
+Alasan Ari bersedia memerankan karakter Tunas untuk film ini sederhana.
+Ia sudah mengetahui karya-karya film Wregas sebelumnya, dan penggambaran karakter Tunas yang menarik membuatnya mau untuk bergabung dalam film ini.
+Baca juga: Sutradara &quot;Budi Pekerti&quot; ungkap tawaran dari Brazil dan Mesir
+
+Di film “Budi Pekerti”, Ari berperan sebagai Tunas, yakni tim redaksi dari media Gaung yang menjadi pemantik dari alur penceritaan di dalamnya.
+Proyek film keduanya ini membuat Ari senang karena dapat mengeksplorasi lagi pengalamannya sebagai aktor dan juga musisi.
+“Beda-beda.
+Ada sesuatu yang nggak aku dapatkan di musik, atau sebaliknya di film, (keduanya) menyenangkan,” kata Ari.
+Ia melanjutkan, “Selalu belajar, selalu belajar, selalu belajar.
+Film menurutku salah satu hal yang menyenangkan,” katanya.
+Baca juga: Film &quot;Budi Pekerti&quot; dapat respons positif audiens di festival Toronto
+
+Menariknya, salah satu pemain di film “Budi Pekerti” Omara Esteghlal merupakan penggemar grup Fourtwnty.
+Saat mereka harus berakting bersama, keduanya mengaku gugup karena rasa kagum satu sama lain.
+“Aku justru paling deg-degan ketemu Bang Ari.
+Tahun 2017, aku di depan sebuah minimarket aku minta foto sama dia,” kata Omar.
+Bahkan, Omar ingin pergi ke konser Fourtwnty karena menyukai grup tersebut.
+Sayangnya, rencana tersebut belum sempat terealisasikan dan akhirnya keduanya dipertemukan kembali di film “Budi Pekerti”.
+Sementara itu, film “Budi Pekerti” akan tayang serentak di seluruh bioskop Indonesia mulai tanggal 2 November 2023.
+Film ini dibintangi oleh deretan bintang Tanah Air, yakni Sha Ine Febriyanti, Angga Yunanda, Prilly Latuconsina, Dwi Sasono, Omar Esteghlal, Ari Lesmana, dan lainnya.
+Baca juga: Sha Ine Febriyanti akui film &quot;Budi Pekerti&quot; cukup menantang
+
+Baca juga: Prilly Latuconsina: Film &quot;Budi Pekerti&quot; kayak sekolah akting lagiPewarta: Vinny Shoffa SalmaEditor: Suryanto				COPYRIGHT © ANTARA 2023
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghitung dan mencetak nilai TF-IDF (Term Frequency-Inverse Document Frequency)</span>
+<span class="c1">#untuk setiap kata dalam setiap kalimat dari teks yang telah di-tokenisasi sebelumnya.</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="c1"># Inisialisasi penghitung TF-IDF</span>
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+
+<span class="c1"># Hitung TF-IDF</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+
+<span class="c1"># Daftar kata kunci</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Konversi matriks TF-IDF menjadi bentuk yang lebih mudah dibaca</span>
+<span class="n">tfidf_values</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+<span class="c1"># Cetak TF-IDF untuk setiap kata dalam setiap kalimat</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">sentence</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">feature_names</span><span class="p">):</span>
+        <span class="n">tfidf_value</span> <span class="o">=</span> <span class="n">tfidf_values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">tfidf_value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">tfidf_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kalimat 1: 
+Film menurutku salah satu hal yang menyenangkanJakarta (ANTARA) - Salah satu anggota dari grup Fourtwnty, Ari Lesmana, ambil bagian di film “Budi Pekerti” garapan sutradara Wregas Bhanuteja sebagai salah satu pemeran pendukung di dalamnya.
+ambil: 0.1830
+anggota: 0.1830
+antara: 0.1609
+ari: 0.1009
+bagian: 0.1830
+bhanuteja: 0.1830
+budi: 0.1073
+dalamnya: 0.1609
+dari: 0.1609
+di: 0.2018
+film: 0.1535
+fourtwnty: 0.1452
+garapan: 0.1830
+grup: 0.1452
+hal: 0.1609
+lesmana: 0.1609
+menurutku: 0.1609
+menyenangkanjakarta: 0.1830
+pekerti: 0.1073
+pemeran: 0.1830
+pendukung: 0.1830
+salah: 0.4356
+satu: 0.3990
+sebagai: 0.1452
+sutradara: 0.1609
+wregas: 0.1609
+yang: 0.1230
+
+Kalimat 2: “Ditawarin, ini menarik.
+ditawarin: 0.6705
+ini: 0.4507
+menarik: 0.5894
+
+Kalimat 3: Jadi mau,” kata Ari saat ditemui dalam acara penayangan perdana film “Budi Pekerti” di Plaza Senayan, Jakarta Pusat, Senin.
+acara: 0.2634
+ari: 0.1452
+budi: 0.1544
+dalam: 0.2315
+di: 0.1452
+ditemui: 0.2634
+film: 0.1104
+jadi: 0.2634
+jakarta: 0.2634
+kata: 0.2089
+mau: 0.2315
+pekerti: 0.1544
+penayangan: 0.2634
+perdana: 0.2634
+plaza: 0.2634
+pusat: 0.2634
+saat: 0.2315
+senayan: 0.2634
+senin: 0.2634
+
+Kalimat 4: Alasan Ari bersedia memerankan karakter Tunas untuk film ini sederhana.
+alasan: 0.3751
+ari: 0.2068
+bersedia: 0.3751
+film: 0.1573
+ini: 0.2522
+karakter: 0.3297
+memerankan: 0.3751
+sederhana: 0.3751
+tunas: 0.2975
+untuk: 0.3297
+
+Kalimat 5: Ia sudah mengetahui karya-karya film Wregas sebelumnya, dan penggambaran karakter Tunas yang menarik membuatnya mau untuk bergabung dalam film ini.
+bergabung: 0.2351
+dalam: 0.2066
+dan: 0.1580
+film: 0.1972
+ia: 0.2066
+ini: 0.1580
+karakter: 0.2066
+karya: 0.4701
+mau: 0.2066
+membuatnya: 0.2351
+menarik: 0.2066
+mengetahui: 0.2351
+penggambaran: 0.2351
+sebelumnya: 0.2351
+sudah: 0.2351
+tunas: 0.1865
+untuk: 0.2066
+wregas: 0.2066
+yang: 0.1580
+
+Kalimat 6: Baca juga: Sutradara &quot;Budi Pekerti&quot; ungkap tawaran dari Brazil dan Mesir
+
+Di film “Budi Pekerti”, Ari berperan sebagai Tunas, yakni tim redaksi dari media Gaung yang menjadi pemantik dari alur penceritaan di dalamnya.
+alur: 0.1825
+ari: 0.1006
+baca: 0.1447
+berperan: 0.1825
+brazil: 0.1825
+budi: 0.2140
+dalamnya: 0.1604
+dan: 0.1227
+dari: 0.4812
+di: 0.2011
+film: 0.0765
+gaung: 0.1825
+juga: 0.1326
+media: 0.1825
+menjadi: 0.1825
+mesir: 0.1825
+pekerti: 0.2140
+pemantik: 0.1825
+penceritaan: 0.1825
+redaksi: 0.1825
+sebagai: 0.1447
+sutradara: 0.1604
+tawaran: 0.1825
+tim: 0.1825
+tunas: 0.1447
+ungkap: 0.1825
+yakni: 0.1604
+yang: 0.1227
+
+Kalimat 7: Proyek film keduanya ini membuat Ari senang karena dapat mengeksplorasi lagi pengalamannya sebagai aktor dan juga musisi.
+aktor: 0.2832
+ari: 0.1561
+dan: 0.1904
+dapat: 0.2489
+film: 0.1188
+ini: 0.1904
+juga: 0.2058
+karena: 0.2246
+keduanya: 0.2058
+lagi: 0.2832
+membuat: 0.2832
+mengeksplorasi: 0.2832
+musisi: 0.2832
+pengalamannya: 0.2832
+proyek: 0.2832
+sebagai: 0.2246
+senang: 0.2832
+
+Kalimat 8: “Beda-beda.
+beda: 1.0000
+
+Kalimat 9: Ada sesuatu yang nggak aku dapatkan di musik, atau sebaliknya di film, (keduanya) menyenangkan,” kata Ari.
+ada: 0.2923
+aku: 0.2318
+ari: 0.1611
+atau: 0.2923
+dapatkan: 0.2923
+di: 0.3222
+film: 0.1226
+kata: 0.2318
+keduanya: 0.2124
+menyenangkan: 0.2569
+musik: 0.2923
+nggak: 0.2923
+sebaliknya: 0.2923
+sesuatu: 0.2923
+yang: 0.1965
+
+Kalimat 10: Ia melanjutkan, “Selalu belajar, selalu belajar, selalu belajar.
+belajar: 0.6747
+ia: 0.1977
+melanjutkan: 0.2249
+selalu: 0.6747
+
+Kalimat 11: Film menurutku salah satu hal yang menyenangkan,” katanya.
+film: 0.1856
+hal: 0.3891
+katanya: 0.4427
+menurutku: 0.3891
+menyenangkan: 0.3891
+salah: 0.3511
+satu: 0.3217
+yang: 0.2976
+
+Kalimat 12: Baca juga: Film &quot;Budi Pekerti&quot; dapat respons positif audiens di festival Toronto
+
+Menariknya, salah satu pemain di film “Budi Pekerti” Omara Esteghlal merupakan penggemar grup Fourtwnty.
+audiens: 0.2248
+baca: 0.1783
+budi: 0.2636
+dapat: 0.1976
+di: 0.2478
+esteghlal: 0.1976
+festival: 0.2248
+film: 0.1886
+fourtwnty: 0.1783
+grup: 0.1783
+juga: 0.1633
+menariknya: 0.2248
+merupakan: 0.2248
+omara: 0.2248
+pekerti: 0.2636
+pemain: 0.2248
+penggemar: 0.2248
+positif: 0.2248
+respons: 0.2248
+salah: 0.1783
+satu: 0.1633
+toronto: 0.2248
+
+Kalimat 13: Saat mereka harus berakting bersama, keduanya mengaku gugup karena rasa kagum satu sama lain.
+berakting: 0.2859
+bersama: 0.2859
+gugup: 0.2859
+harus: 0.2859
+kagum: 0.2859
+karena: 0.2268
+keduanya: 0.2078
+lain: 0.2859
+mengaku: 0.2859
+mereka: 0.2859
+rasa: 0.2859
+saat: 0.2513
+sama: 0.2513
+satu: 0.2078
+
+Kalimat 14: “Aku justru paling deg-degan ketemu Bang Ari.
+aku: 0.3012
+ari: 0.2093
+bang: 0.3798
+deg: 0.3798
+degan: 0.3798
+justru: 0.3798
+ketemu: 0.3798
+paling: 0.3798
+
+Kalimat 15: Tahun 2017, aku di depan sebuah minimarket aku minta foto sama dia,” kata Omar.
+2017: 0.2790
+aku: 0.4425
+depan: 0.2790
+di: 0.1538
+dia: 0.2790
+foto: 0.2790
+kata: 0.2213
+minimarket: 0.2790
+minta: 0.2790
+omar: 0.2213
+sama: 0.2452
+sebuah: 0.2790
+tahun: 0.2790
+
+Kalimat 16: Bahkan, Omar ingin pergi ke konser Fourtwnty karena menyukai grup tersebut.
+bahkan: 0.3281
+fourtwnty: 0.2602
+grup: 0.2602
+ingin: 0.3281
+karena: 0.2602
+ke: 0.3281
+konser: 0.3281
+menyukai: 0.3281
+omar: 0.2602
+pergi: 0.3281
+tersebut: 0.2884
+
+Kalimat 17: Sayangnya, rencana tersebut belum sempat terealisasikan dan akhirnya keduanya dipertemukan kembali di film “Budi Pekerti”.
+akhirnya: 0.3026
+belum: 0.3026
+budi: 0.1774
+dan: 0.2034
+di: 0.1668
+dipertemukan: 0.3026
+film: 0.1269
+keduanya: 0.2199
+kembali: 0.3026
+pekerti: 0.1774
+rencana: 0.3026
+sayangnya: 0.3026
+sempat: 0.3026
+terealisasikan: 0.3026
+tersebut: 0.2660
+
+Kalimat 18: Sementara itu, film “Budi Pekerti” akan tayang serentak di seluruh bioskop Indonesia mulai tanggal 2 November 2023.
+2023: 0.2444
+akan: 0.2780
+bioskop: 0.2780
+budi: 0.1630
+di: 0.1532
+film: 0.1166
+indonesia: 0.2780
+itu: 0.2780
+mulai: 0.2780
+november: 0.2780
+pekerti: 0.1630
+seluruh: 0.2780
+sementara: 0.2780
+serentak: 0.2780
+tanggal: 0.2780
+tayang: 0.2780
+
+Kalimat 19: Film ini dibintangi oleh deretan bintang Tanah Air, yakni Sha Ine Febriyanti, Angga Yunanda, Prilly Latuconsina, Dwi Sasono, Omar Esteghlal, Ari Lesmana, dan lainnya.
+air: 0.2283
+angga: 0.2283
+ari: 0.1258
+bintang: 0.2283
+dan: 0.1534
+deretan: 0.2283
+dibintangi: 0.2283
+dwi: 0.2283
+esteghlal: 0.2006
+febriyanti: 0.2006
+film: 0.0957
+ine: 0.2006
+ini: 0.1534
+lainnya: 0.2283
+latuconsina: 0.2006
+lesmana: 0.2006
+oleh: 0.2283
+omar: 0.1810
+prilly: 0.2006
+sasono: 0.2283
+sha: 0.2006
+tanah: 0.2283
+yakni: 0.2006
+yunanda: 0.2283
+
+Kalimat 20: Baca juga: Sha Ine Febriyanti akui film &quot;Budi Pekerti&quot; cukup menantang
+
+Baca juga: Prilly Latuconsina: Film &quot;Budi Pekerti&quot; kayak sekolah akting lagiPewarta: Vinny Shoffa SalmaEditor: Suryanto				COPYRIGHT © ANTARA 2023
+2023: 0.1741
+akting: 0.1981
+akui: 0.1981
+antara: 0.1741
+baca: 0.3142
+budi: 0.2323
+copyright: 0.1981
+cukup: 0.1981
+febriyanti: 0.1741
+film: 0.1661
+ine: 0.1741
+juga: 0.2878
+kayak: 0.1981
+lagipewarta: 0.1981
+latuconsina: 0.1741
+menantang: 0.1981
+pekerti: 0.2323
+prilly: 0.1741
+salmaeditor: 0.1981
+sekolah: 0.1981
+sha: 0.1741
+shoffa: 0.1981
+suryanto: 0.1981
+vinny: 0.1981
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghitung kemiripan kosinus (cosine similarity) antara dua kalimat berdasarkan vektor representasi TF-IDF dari masing-masing kalimat.</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="c1"># Indeks kalimat yang akan dibandingkan</span>
+<span class="n">sentence1_index</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Ganti dengan indeks kalimat pertama yang ingin Anda bandingkan</span>
+<span class="n">sentence2_index</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Ganti dengan indeks kalimat kedua yang ingin Anda bandingkan</span>
+
+<span class="c1"># Ambil vektor TF-IDF untuk kedua kalimat</span>
+<span class="n">tfidf_vector1</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="p">[</span><span class="n">sentence1_index</span><span class="p">]</span>
+<span class="n">tfidf_vector2</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="p">[</span><span class="n">sentence2_index</span><span class="p">]</span>
+
+<span class="c1"># Hitung cosine similarity antara kedua vektor</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_vector1</span><span class="p">,</span> <span class="n">tfidf_vector2</span><span class="p">)</span>
+
+<span class="c1"># Cetak hasil cosine similarity</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cosine Similarity antara Kalimat </span><span class="si">{</span><span class="n">sentence1_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> dan Kalimat </span><span class="si">{</span><span class="n">sentence2_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarity</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cosine Similarity antara Kalimat 1 dan Kalimat 2: 0.0000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghitung dan mencetak kemiripan kosinus (cosine similarity) antara semua pasangan kalimat dalam teks yang telah di-tokenisasi</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+<span class="c1"># Cetak hasil similarity_matrix</span>
+<span class="n">num_sentences</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>  <span class="c1"># Jumlah kalimat</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_sentences</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_sentences</span><span class="p">):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cosine Similarity antara Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> dan Kalimat </span><span class="si">{</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">similarity</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cosine Similarity antara Kalimat 1 dan Kalimat 2: 0.0000
+Cosine Similarity antara Kalimat 1 dan Kalimat 3: 0.0940
+Cosine Similarity antara Kalimat 1 dan Kalimat 4: 0.0450
+Cosine Similarity antara Kalimat 1 dan Kalimat 5: 0.0830
+Cosine Similarity antara Kalimat 1 dan Kalimat 6: 0.2736
+Cosine Similarity antara Kalimat 1 dan Kalimat 7: 0.0666
+Cosine Similarity antara Kalimat 1 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 1 dan Kalimat 9: 0.1243
+Cosine Similarity antara Kalimat 1 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 1 dan Kalimat 11: 0.4716
+Cosine Similarity antara Kalimat 1 dan Kalimat 12: 0.3302
+Cosine Similarity antara Kalimat 1 dan Kalimat 13: 0.0829
+Cosine Similarity antara Kalimat 1 dan Kalimat 14: 0.0211
+Cosine Similarity antara Kalimat 1 dan Kalimat 15: 0.0310
+Cosine Similarity antara Kalimat 1 dan Kalimat 16: 0.0756
+Cosine Similarity antara Kalimat 1 dan Kalimat 17: 0.0912
+Cosine Similarity antara Kalimat 1 dan Kalimat 18: 0.0838
+Cosine Similarity antara Kalimat 1 dan Kalimat 19: 0.0597
+Cosine Similarity antara Kalimat 1 dan Kalimat 20: 0.1034
+Cosine Similarity antara Kalimat 2 dan Kalimat 3: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 4: 0.1136
+Cosine Similarity antara Kalimat 2 dan Kalimat 5: 0.1930
+Cosine Similarity antara Kalimat 2 dan Kalimat 6: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 7: 0.0858
+Cosine Similarity antara Kalimat 2 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 9: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 11: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 12: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 17: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 18: 0.0000
+Cosine Similarity antara Kalimat 2 dan Kalimat 19: 0.0691
+Cosine Similarity antara Kalimat 2 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 3 dan Kalimat 4: 0.0474
+Cosine Similarity antara Kalimat 3 dan Kalimat 5: 0.1174
+Cosine Similarity antara Kalimat 3 dan Kalimat 6: 0.1183
+Cosine Similarity antara Kalimat 3 dan Kalimat 7: 0.0358
+Cosine Similarity antara Kalimat 3 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 3 dan Kalimat 9: 0.1321
+Cosine Similarity antara Kalimat 3 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 3 dan Kalimat 11: 0.0205
+Cosine Similarity antara Kalimat 3 dan Kalimat 12: 0.1382
+Cosine Similarity antara Kalimat 3 dan Kalimat 13: 0.0582
+Cosine Similarity antara Kalimat 3 dan Kalimat 14: 0.0304
+Cosine Similarity antara Kalimat 3 dan Kalimat 15: 0.0685
+Cosine Similarity antara Kalimat 3 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 3 dan Kalimat 17: 0.0930
+Cosine Similarity antara Kalimat 3 dan Kalimat 18: 0.0855
+Cosine Similarity antara Kalimat 3 dan Kalimat 19: 0.0288
+Cosine Similarity antara Kalimat 3 dan Kalimat 20: 0.0901
+Cosine Similarity antara Kalimat 4 dan Kalimat 5: 0.2626
+Cosine Similarity antara Kalimat 4 dan Kalimat 6: 0.0759
+Cosine Similarity antara Kalimat 4 dan Kalimat 7: 0.0990
+Cosine Similarity antara Kalimat 4 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 4 dan Kalimat 9: 0.0526
+Cosine Similarity antara Kalimat 4 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 4 dan Kalimat 11: 0.0292
+Cosine Similarity antara Kalimat 4 dan Kalimat 12: 0.0297
+Cosine Similarity antara Kalimat 4 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 4 dan Kalimat 14: 0.0433
+Cosine Similarity antara Kalimat 4 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 4 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 4 dan Kalimat 17: 0.0200
+Cosine Similarity antara Kalimat 4 dan Kalimat 18: 0.0183
+Cosine Similarity antara Kalimat 4 dan Kalimat 19: 0.0798
+Cosine Similarity antara Kalimat 4 dan Kalimat 20: 0.0261
+Cosine Similarity antara Kalimat 5 dan Kalimat 6: 0.0808
+Cosine Similarity antara Kalimat 5 dan Kalimat 7: 0.0836
+Cosine Similarity antara Kalimat 5 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 9: 0.0552
+Cosine Similarity antara Kalimat 5 dan Kalimat 10: 0.0408
+Cosine Similarity antara Kalimat 5 dan Kalimat 11: 0.0836
+Cosine Similarity antara Kalimat 5 dan Kalimat 12: 0.0372
+Cosine Similarity antara Kalimat 5 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 5 dan Kalimat 17: 0.0572
+Cosine Similarity antara Kalimat 5 dan Kalimat 18: 0.0230
+Cosine Similarity antara Kalimat 5 dan Kalimat 19: 0.0674
+Cosine Similarity antara Kalimat 5 dan Kalimat 20: 0.0328
+Cosine Similarity antara Kalimat 6 dan Kalimat 7: 0.1079
+Cosine Similarity antara Kalimat 6 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 9: 0.1145
+Cosine Similarity antara Kalimat 6 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 11: 0.0507
+Cosine Similarity antara Kalimat 6 dan Kalimat 12: 0.2246
+Cosine Similarity antara Kalimat 6 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 14: 0.0211
+Cosine Similarity antara Kalimat 6 dan Kalimat 15: 0.0309
+Cosine Similarity antara Kalimat 6 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 6 dan Kalimat 17: 0.1441
+Cosine Similarity antara Kalimat 6 dan Kalimat 18: 0.1095
+Cosine Similarity antara Kalimat 6 dan Kalimat 19: 0.0710
+Cosine Similarity antara Kalimat 6 dan Kalimat 20: 0.1957
+Cosine Similarity antara Kalimat 7 dan Kalimat 8: 0.0000
+Cosine Similarity antara Kalimat 7 dan Kalimat 9: 0.0834
+Cosine Similarity antara Kalimat 7 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 7 dan Kalimat 11: 0.0220
+Cosine Similarity antara Kalimat 7 dan Kalimat 12: 0.1052
+Cosine Similarity antara Kalimat 7 dan Kalimat 13: 0.0937
+Cosine Similarity antara Kalimat 7 dan Kalimat 14: 0.0327
+Cosine Similarity antara Kalimat 7 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 7 dan Kalimat 16: 0.0585
+Cosine Similarity antara Kalimat 7 dan Kalimat 17: 0.0990
+Cosine Similarity antara Kalimat 7 dan Kalimat 18: 0.0138
+Cosine Similarity antara Kalimat 7 dan Kalimat 19: 0.0894
+Cosine Similarity antara Kalimat 7 dan Kalimat 20: 0.0790
+Cosine Similarity antara Kalimat 8 dan Kalimat 9: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 11: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 12: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 17: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 18: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 19: 0.0000
+Cosine Similarity antara Kalimat 8 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 9 dan Kalimat 10: 0.0000
+Cosine Similarity antara Kalimat 9 dan Kalimat 11: 0.1812
+Cosine Similarity antara Kalimat 9 dan Kalimat 12: 0.1030
+Cosine Similarity antara Kalimat 9 dan Kalimat 13: 0.0441
+Cosine Similarity antara Kalimat 9 dan Kalimat 14: 0.1036
+Cosine Similarity antara Kalimat 9 dan Kalimat 15: 0.2034
+Cosine Similarity antara Kalimat 9 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 9 dan Kalimat 17: 0.1160
+Cosine Similarity antara Kalimat 9 dan Kalimat 18: 0.0637
+Cosine Similarity antara Kalimat 9 dan Kalimat 19: 0.0320
+Cosine Similarity antara Kalimat 9 dan Kalimat 20: 0.0204
+Cosine Similarity antara Kalimat 10 dan Kalimat 11: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 12: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 13: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 17: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 18: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 19: 0.0000
+Cosine Similarity antara Kalimat 10 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 11 dan Kalimat 12: 0.1502
+Cosine Similarity antara Kalimat 11 dan Kalimat 13: 0.0668
+Cosine Similarity antara Kalimat 11 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 11 dan Kalimat 15: 0.0000
+Cosine Similarity antara Kalimat 11 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 11 dan Kalimat 17: 0.0236
+Cosine Similarity antara Kalimat 11 dan Kalimat 18: 0.0216
+Cosine Similarity antara Kalimat 11 dan Kalimat 19: 0.0178
+Cosine Similarity antara Kalimat 11 dan Kalimat 20: 0.0308
+Cosine Similarity antara Kalimat 12 dan Kalimat 13: 0.0339
+Cosine Similarity antara Kalimat 12 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 12 dan Kalimat 15: 0.0381
+Cosine Similarity antara Kalimat 12 dan Kalimat 16: 0.0928
+Cosine Similarity antara Kalimat 12 dan Kalimat 17: 0.1588
+Cosine Similarity antara Kalimat 12 dan Kalimat 18: 0.1459
+Cosine Similarity antara Kalimat 12 dan Kalimat 19: 0.0577
+Cosine Similarity antara Kalimat 12 dan Kalimat 20: 0.2568
+Cosine Similarity antara Kalimat 13 dan Kalimat 14: 0.0000
+Cosine Similarity antara Kalimat 13 dan Kalimat 15: 0.0616
+Cosine Similarity antara Kalimat 13 dan Kalimat 16: 0.0590
+Cosine Similarity antara Kalimat 13 dan Kalimat 17: 0.0457
+Cosine Similarity antara Kalimat 13 dan Kalimat 18: 0.0000
+Cosine Similarity antara Kalimat 13 dan Kalimat 19: 0.0000
+Cosine Similarity antara Kalimat 13 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 14 dan Kalimat 15: 0.1333
+Cosine Similarity antara Kalimat 14 dan Kalimat 16: 0.0000
+Cosine Similarity antara Kalimat 14 dan Kalimat 17: 0.0000
+Cosine Similarity antara Kalimat 14 dan Kalimat 18: 0.0000
+Cosine Similarity antara Kalimat 14 dan Kalimat 19: 0.0263
+Cosine Similarity antara Kalimat 14 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 15 dan Kalimat 16: 0.0576
+Cosine Similarity antara Kalimat 15 dan Kalimat 17: 0.0256
+Cosine Similarity antara Kalimat 15 dan Kalimat 18: 0.0236
+Cosine Similarity antara Kalimat 15 dan Kalimat 19: 0.0401
+Cosine Similarity antara Kalimat 15 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 16 dan Kalimat 17: 0.0767
+Cosine Similarity antara Kalimat 16 dan Kalimat 18: 0.0000
+Cosine Similarity antara Kalimat 16 dan Kalimat 19: 0.0471
+Cosine Similarity antara Kalimat 16 dan Kalimat 20: 0.0000
+Cosine Similarity antara Kalimat 17 dan Kalimat 18: 0.0982
+Cosine Similarity antara Kalimat 17 dan Kalimat 19: 0.0434
+Cosine Similarity antara Kalimat 17 dan Kalimat 20: 0.1035
+Cosine Similarity antara Kalimat 18 dan Kalimat 19: 0.0112
+Cosine Similarity antara Kalimat 18 dan Kalimat 20: 0.1376
+Cosine Similarity antara Kalimat 19 dan Kalimat 20: 0.1906
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membuat dan mencetak DataFrame menggunakan hasil perhitungan cosine similarity antara semua pasangan kalimat dalam teks yang telah di-tokenisasi dan matriks TF-IDF</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Nama kolom dan indeks untuk DataFrame</span>
+<span class="n">sentence_indices</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">))]</span>
+
+<span class="c1"># Buat DataFrame dari hasil cosine similarity</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">)</span>
+
+<span class="c1"># Cetak DataFrame</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-277fbdea-957d-4d02-9f9d-a62b7874405c" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kalimat 1</th>
+      <th>Kalimat 2</th>
+      <th>Kalimat 3</th>
+      <th>Kalimat 4</th>
+      <th>Kalimat 5</th>
+      <th>Kalimat 6</th>
+      <th>Kalimat 7</th>
+      <th>Kalimat 8</th>
+      <th>Kalimat 9</th>
+      <th>Kalimat 10</th>
+      <th>Kalimat 11</th>
+      <th>Kalimat 12</th>
+      <th>Kalimat 13</th>
+      <th>Kalimat 14</th>
+      <th>Kalimat 15</th>
+      <th>Kalimat 16</th>
+      <th>Kalimat 17</th>
+      <th>Kalimat 18</th>
+      <th>Kalimat 19</th>
+      <th>Kalimat 20</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Kalimat 1</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.094045</td>
+      <td>0.045017</td>
+      <td>0.082961</td>
+      <td>0.273558</td>
+      <td>0.066594</td>
+      <td>0.0</td>
+      <td>0.124270</td>
+      <td>0.000000</td>
+      <td>0.471625</td>
+      <td>0.330173</td>
+      <td>0.082900</td>
+      <td>0.021122</td>
+      <td>0.031028</td>
+      <td>0.075570</td>
+      <td>0.091234</td>
+      <td>0.083811</td>
+      <td>0.059674</td>
+      <td>0.103379</td>
+    </tr>
+    <tr>
+      <th>Kalimat 2</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.113646</td>
+      <td>0.192994</td>
+      <td>0.000000</td>
+      <td>0.085789</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.069149</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 3</th>
+      <td>0.094045</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.047391</td>
+      <td>0.117443</td>
+      <td>0.118334</td>
+      <td>0.035775</td>
+      <td>0.0</td>
+      <td>0.132125</td>
+      <td>0.000000</td>
+      <td>0.020504</td>
+      <td>0.138220</td>
+      <td>0.058186</td>
+      <td>0.030389</td>
+      <td>0.068538</td>
+      <td>0.000000</td>
+      <td>0.093030</td>
+      <td>0.085460</td>
+      <td>0.028836</td>
+      <td>0.090082</td>
+    </tr>
+    <tr>
+      <th>Kalimat 4</th>
+      <td>0.045017</td>
+      <td>0.113646</td>
+      <td>0.047391</td>
+      <td>1.000000</td>
+      <td>0.262614</td>
+      <td>0.075897</td>
+      <td>0.098958</td>
+      <td>0.0</td>
+      <td>0.052597</td>
+      <td>0.000000</td>
+      <td>0.029206</td>
+      <td>0.029663</td>
+      <td>0.000000</td>
+      <td>0.043287</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.019965</td>
+      <td>0.018341</td>
+      <td>0.079764</td>
+      <td>0.026135</td>
+    </tr>
+    <tr>
+      <th>Kalimat 5</th>
+      <td>0.082961</td>
+      <td>0.192994</td>
+      <td>0.117443</td>
+      <td>0.262614</td>
+      <td>1.000000</td>
+      <td>0.080832</td>
+      <td>0.083570</td>
+      <td>0.0</td>
+      <td>0.055212</td>
+      <td>0.040847</td>
+      <td>0.083623</td>
+      <td>0.037176</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.057164</td>
+      <td>0.022986</td>
+      <td>0.067361</td>
+      <td>0.032754</td>
+    </tr>
+    <tr>
+      <th>Kalimat 6</th>
+      <td>0.273558</td>
+      <td>0.000000</td>
+      <td>0.118334</td>
+      <td>0.075897</td>
+      <td>0.080832</td>
+      <td>1.000000</td>
+      <td>0.107918</td>
+      <td>0.0</td>
+      <td>0.114493</td>
+      <td>0.000000</td>
+      <td>0.050703</td>
+      <td>0.224562</td>
+      <td>0.000000</td>
+      <td>0.021054</td>
+      <td>0.030929</td>
+      <td>0.000000</td>
+      <td>0.144148</td>
+      <td>0.109499</td>
+      <td>0.070977</td>
+      <td>0.195744</td>
+    </tr>
+    <tr>
+      <th>Kalimat 7</th>
+      <td>0.066594</td>
+      <td>0.085789</td>
+      <td>0.035775</td>
+      <td>0.098958</td>
+      <td>0.083570</td>
+      <td>0.107918</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>0.083400</td>
+      <td>0.000000</td>
+      <td>0.022047</td>
+      <td>0.105190</td>
+      <td>0.093692</td>
+      <td>0.032676</td>
+      <td>0.000000</td>
+      <td>0.058454</td>
+      <td>0.099034</td>
+      <td>0.013845</td>
+      <td>0.089418</td>
+      <td>0.078951</td>
+    </tr>
+    <tr>
+      <th>Kalimat 8</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 9</th>
+      <td>0.124270</td>
+      <td>0.000000</td>
+      <td>0.132125</td>
+      <td>0.052597</td>
+      <td>0.055212</td>
+      <td>0.114493</td>
+      <td>0.083400</td>
+      <td>0.0</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.181194</td>
+      <td>0.102966</td>
+      <td>0.044123</td>
+      <td>0.103563</td>
+      <td>0.203425</td>
+      <td>0.000000</td>
+      <td>0.115998</td>
+      <td>0.063663</td>
+      <td>0.032003</td>
+      <td>0.020363</td>
+    </tr>
+    <tr>
+      <th>Kalimat 10</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.040847</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 11</th>
+      <td>0.471625</td>
+      <td>0.000000</td>
+      <td>0.020504</td>
+      <td>0.029206</td>
+      <td>0.083623</td>
+      <td>0.050703</td>
+      <td>0.022047</td>
+      <td>0.0</td>
+      <td>0.181194</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.150155</td>
+      <td>0.066828</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023560</td>
+      <td>0.021643</td>
+      <td>0.017771</td>
+      <td>0.030841</td>
+    </tr>
+    <tr>
+      <th>Kalimat 12</th>
+      <td>0.330173</td>
+      <td>0.000000</td>
+      <td>0.138220</td>
+      <td>0.029663</td>
+      <td>0.037176</td>
+      <td>0.224562</td>
+      <td>0.105190</td>
+      <td>0.0</td>
+      <td>0.102966</td>
+      <td>0.000000</td>
+      <td>0.150155</td>
+      <td>1.000000</td>
+      <td>0.033937</td>
+      <td>0.000000</td>
+      <td>0.038106</td>
+      <td>0.092809</td>
+      <td>0.158826</td>
+      <td>0.145902</td>
+      <td>0.057697</td>
+      <td>0.256832</td>
+    </tr>
+    <tr>
+      <th>Kalimat 13</th>
+      <td>0.082900</td>
+      <td>0.000000</td>
+      <td>0.058186</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.093692</td>
+      <td>0.0</td>
+      <td>0.044123</td>
+      <td>0.000000</td>
+      <td>0.066828</td>
+      <td>0.033937</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.061631</td>
+      <td>0.059024</td>
+      <td>0.045683</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 14</th>
+      <td>0.021122</td>
+      <td>0.000000</td>
+      <td>0.030389</td>
+      <td>0.043287</td>
+      <td>0.000000</td>
+      <td>0.021054</td>
+      <td>0.032676</td>
+      <td>0.0</td>
+      <td>0.103563</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.133302</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.026338</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 15</th>
+      <td>0.031028</td>
+      <td>0.000000</td>
+      <td>0.068538</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.030929</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.203425</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.038106</td>
+      <td>0.061631</td>
+      <td>0.133302</td>
+      <td>1.000000</td>
+      <td>0.057581</td>
+      <td>0.025648</td>
+      <td>0.023561</td>
+      <td>0.040058</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 16</th>
+      <td>0.075570</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.058454</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.092809</td>
+      <td>0.059024</td>
+      <td>0.000000</td>
+      <td>0.057581</td>
+      <td>1.000000</td>
+      <td>0.076718</td>
+      <td>0.000000</td>
+      <td>0.047116</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalimat 17</th>
+      <td>0.091234</td>
+      <td>0.000000</td>
+      <td>0.093030</td>
+      <td>0.019965</td>
+      <td>0.057164</td>
+      <td>0.144148</td>
+      <td>0.099034</td>
+      <td>0.0</td>
+      <td>0.115998</td>
+      <td>0.000000</td>
+      <td>0.023560</td>
+      <td>0.158826</td>
+      <td>0.045683</td>
+      <td>0.000000</td>
+      <td>0.025648</td>
+      <td>0.076718</td>
+      <td>1.000000</td>
+      <td>0.098201</td>
+      <td>0.043358</td>
+      <td>0.103511</td>
+    </tr>
+    <tr>
+      <th>Kalimat 18</th>
+      <td>0.083811</td>
+      <td>0.000000</td>
+      <td>0.085460</td>
+      <td>0.018341</td>
+      <td>0.022986</td>
+      <td>0.109499</td>
+      <td>0.013845</td>
+      <td>0.0</td>
+      <td>0.063663</td>
+      <td>0.000000</td>
+      <td>0.021643</td>
+      <td>0.145902</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023561</td>
+      <td>0.000000</td>
+      <td>0.098201</td>
+      <td>1.000000</td>
+      <td>0.011160</td>
+      <td>0.137632</td>
+    </tr>
+    <tr>
+      <th>Kalimat 19</th>
+      <td>0.059674</td>
+      <td>0.069149</td>
+      <td>0.028836</td>
+      <td>0.079764</td>
+      <td>0.067361</td>
+      <td>0.070977</td>
+      <td>0.089418</td>
+      <td>0.0</td>
+      <td>0.032003</td>
+      <td>0.000000</td>
+      <td>0.017771</td>
+      <td>0.057697</td>
+      <td>0.000000</td>
+      <td>0.026338</td>
+      <td>0.040058</td>
+      <td>0.047116</td>
+      <td>0.043358</td>
+      <td>0.011160</td>
+      <td>1.000000</td>
+      <td>0.190560</td>
+    </tr>
+    <tr>
+      <th>Kalimat 20</th>
+      <td>0.103379</td>
+      <td>0.000000</td>
+      <td>0.090082</td>
+      <td>0.026135</td>
+      <td>0.032754</td>
+      <td>0.195744</td>
+      <td>0.078951</td>
+      <td>0.0</td>
+      <td>0.020363</td>
+      <td>0.000000</td>
+      <td>0.030841</td>
+      <td>0.256832</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.103511</td>
+      <td>0.137632</td>
+      <td>0.190560</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-277fbdea-957d-4d02-9f9d-a62b7874405c')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-277fbdea-957d-4d02-9f9d-a62b7874405c button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-277fbdea-957d-4d02-9f9d-a62b7874405c');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membuat dan menampilkan grafik matriks yang menggambarkan cosine similarity antara semua pasangan kalimat dalam teks yang telah di-tokenisasi</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Nama kolom dan indeks untuk DataFrame</span>
+<span class="n">sentence_indices</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">))]</span>
+
+<span class="c1"># Buat DataFrame dari hasil cosine similarity</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">sentence_indices</span><span class="p">)</span>
+
+<span class="c1"># Membuat grafik matriks</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cax</span><span class="p">)</span>
+
+<span class="c1"># Memberi label pada sumbu X dan Y</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan nilai similarity pada matriks</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">iat</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/56c0034d4287e6903580d4a3473eee7c6418993d80a5761c364139a0923b88b0.png" src="_images/56c0034d4287e6903580d4a3473eee7c6418993d80a5761c364139a0923b88b0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membangun sebuah graf yang merepresentasikan hubungan antara kalimat dalam teks berdasarkan kemiripan (similarity) antara kalimat-kalimat tersebut.</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># Buat grafik dari matriks similarity</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># Tambahkan simpul (node) ke grafik yang mewakili setiap kalimat</span>
+<span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan tepi (edge) antara kalimat berdasarkan similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>  <span class="c1"># Mengambil similarity dari DataFrame</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sentences</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">similarity</span><span class="p">)</span>
+
+<span class="c1"># Hitung closeness centrality untuk setiap simpul</span>
+<span class="n">closeness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+<span class="c1"># Cetak closeness centrality</span>
+<span class="k">for</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Closeness Centrality of </span><span class="si">{</span><span class="n">sentence</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">centrality</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Closeness Centrality of 
+Film menurutku salah satu hal yang menyenangkanJakarta (ANTARA) - Salah satu anggota dari grup Fourtwnty, Ari Lesmana, ambil bagian di film “Budi Pekerti” garapan sutradara Wregas Bhanuteja sebagai salah satu pemeran pendukung di dalamnya.: 14.7077
+Closeness Centrality of “Ditawarin, ini menarik.: 8.8977
+Closeness Centrality of Jadi mau,” kata Ari saat ditemui dalam acara penayangan perdana film “Budi Pekerti” di Plaza Senayan, Jakarta Pusat, Senin.: 17.0248
+Closeness Centrality of Alasan Ari bersedia memerankan karakter Tunas untuk film ini sederhana.: 20.4028
+Closeness Centrality of Ia sudah mengetahui karya-karya film Wregas sebelumnya, dan penggambaran karakter Tunas yang menarik membuatnya mau untuk bergabung dalam film ini.: 17.3705
+Closeness Centrality of Baca juga: Sutradara &quot;Budi Pekerti&quot; ungkap tawaran dari Brazil dan Mesir
+
+Di film “Budi Pekerti”, Ari berperan sebagai Tunas, yakni tim redaksi dari media Gaung yang menjadi pemantik dari alur penceritaan di dalamnya.: 14.2555
+Closeness Centrality of Proyek film keduanya ini membuat Ari senang karena dapat mengeksplorasi lagi pengalamannya sebagai aktor dan juga musisi.: 19.5682
+Closeness Centrality of “Beda-beda.: 0.0000
+Closeness Centrality of Ada sesuatu yang nggak aku dapatkan di musik, atau sebaliknya di film, (keduanya) menyenangkan,” kata Ari.: 15.3951
+Closeness Centrality of Ia melanjutkan, “Selalu belajar, selalu belajar, selalu belajar.: 10.1740
+Closeness Centrality of Film menurutku salah satu hal yang menyenangkan,” katanya.: 20.5899
+Closeness Centrality of Baca juga: Film &quot;Budi Pekerti&quot; dapat respons positif audiens di festival Toronto
+
+Menariknya, salah satu pemain di film “Budi Pekerti” Omara Esteghlal merupakan penggemar grup Fourtwnty.: 15.0543
+Closeness Centrality of Saat mereka harus berakting bersama, keduanya mengaku gugup karena rasa kagum satu sama lain.: 12.7561
+Closeness Centrality of “Aku justru paling deg-degan ketemu Bang Ari.: 17.1945
+Closeness Centrality of Tahun 2017, aku di depan sebuah minimarket aku minta foto sama dia,” kata Omar.: 18.6200
+Closeness Centrality of Bahkan, Omar ingin pergi ke konser Fourtwnty karena menyukai grup tersebut.: 12.1853
+Closeness Centrality of Sayangnya, rencana tersebut belum sempat terealisasikan dan akhirnya keduanya dipertemukan kembali di film “Budi Pekerti”.: 17.6668
+Closeness Centrality of Sementara itu, film “Budi Pekerti” akan tayang serentak di seluruh bioskop Indonesia mulai tanggal 2 November 2023.: 22.5441
+Closeness Centrality of Film ini dibintangi oleh deretan bintang Tanah Air, yakni Sha Ine Febriyanti, Angga Yunanda, Prilly Latuconsina, Dwi Sasono, Omar Esteghlal, Ari Lesmana, dan lainnya.: 22.7564
+Closeness Centrality of Baca juga: Sha Ine Febriyanti akui film &quot;Budi Pekerti&quot; cukup menantang
+
+Baca juga: Prilly Latuconsina: Film &quot;Budi Pekerti&quot; kayak sekolah akting lagiPewarta: Vinny Shoffa SalmaEditor: Suryanto				COPYRIGHT © ANTARA 2023: 16.2245
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membuat grafik berarah (Directed Graph - DiGraph) yang merepresentasikan hubungan antara kalimat-kalimat dalam teks berdasarkan kemiripan (cosine similarity)</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># Matriks TF-IDF telah dihitung sebelumnya (tfidf_matrix)</span>
+<span class="c1"># Hitung cosine similarity antara semua pasangan kalimat</span>
+<span class="n">similarity_matrix</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Buat grafik berarah (DiGraph) berdasarkan similarity_matrix</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Tambahkan node dengan indeks numerik</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">similarity_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>  <span class="c1"># Pastikan node tidak menghubungkan dirinya sendiri</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+<span class="c1"># Hitung closeness centrality</span>
+<span class="n">closeness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi closeness centrality</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># Atur layout grafik</span>
+<span class="n">node_size</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="mi">1000</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">closeness_centrality</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>  <span class="c1"># Ubah ukuran node berdasarkan closeness centrality, dengan faktor pengurangan ukuran</span>
+
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">node_size</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Cetak closeness centrality</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Closeness Centrality:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">closeness</span> <span class="ow">in</span> <span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">closeness</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f7580207fbb232d56c79429ed735dd0949cd1a76ce8e81ae12999084908248f5.png" src="_images/f7580207fbb232d56c79429ed735dd0949cd1a76ce8e81ae12999084908248f5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Closeness Centrality:
+Node 0: 0.8526
+Node 1: 0.5329
+Node 2: 0.8120
+Node 3: 0.7751
+Node 4: 0.7751
+Node 5: 0.7751
+Node 6: 0.8526
+Node 7: 0.0000
+Node 8: 0.8120
+Node 9: 0.4372
+Node 10: 0.7414
+Node 11: 0.8120
+Node 12: 0.6090
+Node 13: 0.5880
+Node 14: 0.6559
+Node 15: 0.5684
+Node 16: 0.8120
+Node 17: 0.7414
+Node 18: 0.8526
+Node 19: 0.7105
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Buat grafik dari matriks similarity</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># Tambahkan simpul (node) ke grafik yang mewakili setiap kalimat</span>
+<span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan tepi (edge) antara kalimat berdasarkan similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>  <span class="c1"># Mengambil similarity dari DataFrame</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sentences</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">similarity</span><span class="p">)</span>
+
+<span class="c1"># Hitung closeness centrality untuk setiap simpul</span>
+<span class="n">closeness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Urutkan closeness centrality dari yang tertinggi ke terendah</span>
+<span class="n">sorted_closeness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Ambil 3 kalimat penting teratas</span>
+<span class="n">top_3_closeness</span> <span class="o">=</span> <span class="n">sorted_closeness</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Buat DataFrame dari kalimat-kalimat penting</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Peringkat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">top_3_closeness</span><span class="p">)],</span>
+    <span class="s2">&quot;Kalimat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">sentence</span> <span class="k">for</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_closeness</span><span class="p">],</span>
+    <span class="s2">&quot;Closeness Centrality&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">centrality</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">centrality</span> <span class="ow">in</span> <span class="n">top_3_closeness</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df_closeness</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 Kalimat Penting Berdasarkan Closeness Centrality:&quot;</span><span class="p">)</span>
+<span class="n">df_closeness</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 Kalimat Penting Berdasarkan Closeness Centrality:
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-6bdba1df-2f4b-4c2a-9027-fda85e3ab971" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Peringkat</th>
+      <th>Kalimat</th>
+      <th>Closeness Centrality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>\nFilm menurutku salah satu hal yang menyenang...</td>
+      <td>0.852632</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Proyek film keduanya ini membuat Ari senang ka...</td>
+      <td>0.852632</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Film ini dibintangi oleh deretan bintang Tanah...</td>
+      <td>0.852632</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6bdba1df-2f4b-4c2a-9027-fda85e3ab971')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-6bdba1df-2f4b-4c2a-9027-fda85e3ab971 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-6bdba1df-2f4b-4c2a-9027-fda85e3ab971');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Buat grafik dari matriks similarity</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># Tambahkan simpul (node) ke grafik yang mewakili setiap kalimat</span>
+<span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan tepi (edge) antara kalimat berdasarkan similarity</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)):</span>
+        <span class="n">similarity</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>  <span class="c1"># Mengambil similarity dari DataFrame</span>
+        <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">sentences</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sentences</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">similarity</span><span class="p">)</span>
+
+<span class="c1"># Hitung PageRank untuk setiap simpul</span>
+<span class="n">pagerank</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Urutkan PageRank dari yang tertinggi ke terendah</span>
+<span class="n">sorted_pagerank</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Ambil 3 kalimat penting teratas</span>
+<span class="n">top_3_pagerank</span> <span class="o">=</span> <span class="n">sorted_pagerank</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Buat DataFrame dari kalimat-kalimat penting</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Peringkat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">top_3_pagerank</span><span class="p">)],</span>
+    <span class="s2">&quot;Kalimat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">sentence</span> <span class="k">for</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">top_3_pagerank</span><span class="p">],</span>
+    <span class="s2">&quot;PageRank Score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">score</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">top_3_pagerank</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df_pagerank</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 Kalimat Penting Berdasarkan PageRank:&quot;</span><span class="p">)</span>
+<span class="n">df_pagerank</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 Kalimat Penting Berdasarkan PageRank:
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-e264283e-c544-4af7-a40b-3cda1cb770a2" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Peringkat</th>
+      <th>Kalimat</th>
+      <th>PageRank Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>\nFilm menurutku salah satu hal yang menyenang...</td>
+      <td>0.093584</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Baca juga: Film "Budi Pekerti" dapat respons p...</td>
+      <td>0.087591</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Baca juga: Sutradara "Budi Pekerti" ungkap taw...</td>
+      <td>0.075533</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e264283e-c544-4af7-a40b-3cda1cb770a2')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-e264283e-c544-4af7-a40b-3cda1cb770a2 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-e264283e-c544-4af7-a40b-3cda1cb770a2');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Reduksi%20Dimensi%20Feature.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Implementasi Reduksi Dimensi PTA Dataset</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 20-168 Rania Nuraini
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
