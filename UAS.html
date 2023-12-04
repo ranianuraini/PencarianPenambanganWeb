@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>UAS &#8212; Pencarian &amp; Penambangan Web</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UAS';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Crawling Berita Online" href="Crawling%20Berita%20Online.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Pencarian & Penambangan Web - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Pencarian & Penambangan Web - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Crawling%20PTA%20Trunojoyo.html">Crawling Website PTA Trunojoyo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Preprocessing%20Hasil%20Crawling.html">Preprocessing Data Text</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Reduksi%20Dimensi%20Feature.html">Implementasi Reduksi Dimensi PTA Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling%20Berita%20Online.html">Crawling Berita Online</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UAS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ranianuraini/PencarianPenambanganWeb" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ranianuraini/PencarianPenambanganWeb/issues/new?title=Issue%20on%20page%20%2FUAS.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UAS.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>UAS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="uas">
+<h1>UAS<a class="headerlink" href="#uas" title="Permalink to this heading">#</a></h1>
+<p>a. Crawling berita online berdasarkan kategori</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="k">def</span> <span class="nf">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">):</span>
+    <span class="c1"># Mengunduh halaman kategori</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gagal mengunduh halaman </span><span class="si">{</span><span class="n">category_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="c1"># Membuat objek BeautifulSoup</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Mencari tautan berita</span>
+    <span class="n">news_links</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">):</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+        <span class="n">news_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">news_links</span>
+
+<span class="c1"># Kategori yang akan di-crawl</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">]</span>
+
+<span class="c1"># Crawl berita untuk setiap kategori</span>
+<span class="k">for</span> <span class="n">category_url</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+    <span class="n">news_links</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+
+    <span class="c1"># Menampilkan hasil</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Berita dari kategori </span><span class="si">{</span><span class="n">category_url</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">news_links</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita dari kategori https://sport.detik.com/:
+https://sport.detik.com/moto-gp/d-7068676/komentar-valentino-rossi-lihat-marc-marquez-gabung-ke-ducati
+https://sport.detik.com/sport-lain/d-7066828/cari-desak-made-baru-fpti-gelar-kejurnas-panjat-tebing
+https://sport.detik.com/moto-gp/d-7065304/bagnaia-puas-dengan-motor-baru-ducati-tapi-bisa-lebih-oke-lagi
+https://sport.detik.com/g-sport/d-7067249/jonatan-christie-resmi-nikahi-shanju-eks-jkt48
+https://sport.detik.com/raket/d-7066950/6-wakil-indonesia-di-bwf-world-tour-finals-2023
+https://sport.detik.com/sport-lain/d-7071648/atlet-para-cycling-ri-raih-3-emas-di-world-abilitysport-games-2023
+https://sport.detik.com/sport-lain/d-7002733/asian-para-games-balap-sepeda-kembali-sumbang-emas-kini-dari-m-fadli
+https://sport.detik.com/sport-lain/d-6848700/karena-olahraga-bisa-dilakukan-di-mana-saja
+https://sport.detik.com/sepakbola/liga-italia/d-7072323/inter-milan-harus-hati-hati-dengan-juventus-ini-alasannya
+https://sport.detik.com/sepakbola/liga-spanyol/d-7072298/alasan-joao-felix-tak-sungkan-rayakan-gol-ke-gawang-atletico-madrid
+https://sport.detik.com/sepakbola/liga-indonesia/d-7072296/bhayangkara-fc-kontrak-radja-nainggolan-rp-5-miliar
+https://sport.detik.com/sepakbola/liga-inggris/d-7071836/man-city-melambat-guardiola-bukan-karena-apes
+https://sport.detik.com/sepakbola/liga-indonesia/d-7072257/persib-vs-psm-tuntas-tanpa-pemenang
+https://sport.detik.com/sepakbola/liga-indonesia/d-7072185/bhayangkara-fc-resmi-perkenalkan-radja-nainggolan
+https://sport.detik.com/sepakbola/liga-inggris/d-7071786/jorginho-ingatkan-arsenal-jangan-buru-buru-lepas-pedal
+https://sport.detik.com/sepakbola/liga-spanyol/d-7071785/xavi-bahagia-barcelona-punya-joao-felix
+https://sport.detik.com/fotosport/d-7071789/foto-aksi-ciamik-para-pebulutangkis-muda-bni-sirnas-b-di-pekanbaru
+https://sport.detik.com/sepakbola/liga-italia/d-7071731/barella-juventus-lawan-sulit-karena-jago-bertahan
+https://sport.detik.com/sepakbola/liga-inggris/d-7071730/paul-scholes-sebut-mu-kini-tim-sampah-banyak-pemain-malas
+https://sport.detik.com/sepakbola/liga-indonesia/d-7071445/daftar-kerusuhan-suporter-di-liga-1-2023-2024
+https://sport.detik.com/sepakbola/foto-sepakbola/d-7071460/meme-haaland-ngamuk
+https://sport.detik.com/sepakbola/liga-inggris/d-7071447/pemain-chelsea-ini-rayakan-gol-perdana-mendadak-berhenti-karena
+https://sport.detik.com/sepakbola/liga-inggris/d-7071383/sudah-bosan-juara-manchester-city
+https://sport.detik.com/sepakbola/liga-italia/d-7071717/van-de-beek-dikabarkan-menuju-juventus
+https://sport.detik.com/sepakbola/liga-indonesia/d-7071834/kata-jokowi-soal-ri-calonkan-diri-jadi-tuan-rumah-piala-dunia-u-20-2025
+https://sport.detik.com/sepakbola/liga-inggris/d-7071146/lagi-lagi-kode-emoji-david-de-gea
+https://sport.detik.com/sepakbola/liga-spanyol/d-7071027/joao-felix-permanenkan-aku-barcelona
+https://sport.detik.com/sepakbola/liga-indonesia/d-7071733/bali-united-vs-arema-fc-serdadu-tridatu-menang-3-2
+https://sport.detik.com/sepakbola/detiktv/d-7071713/jokowi-minta-pssi-jajaki-peluang-jadi-tuan-rumah-pildun-u-20-2025
+https://sport.detik.com/sepakbola/liga-inggris/d-7071140/mengapa-ten-hag-mainkan-luke-shaw-lagi-di-posisi-bek-tengah
+https://sport.detik.com/raket/d-7071544/dzaky-kalahkan-khadafi-maju-ke-64-besar-bni-sirnas-b-pekanbaru
+https://sport.detik.com/sepakbola/liga-indonesia/d-7071141/marak-rusuh-suporter-saatnya-terapkan-sanksi-pengurangan-poin-di-liga-1
+https://sport.detik.com/sepakbola/detiktv/d-7071561/jokowi-soal-timnas-u-17-perlu-proses-tak-bisa-instan-jadi-juara
+https://sport.detik.com/sepakbola/liga-indonesia/d-7071483/indonesia-siap-calonkan-diri-jadi-tuan-rumah-piala-dunia-u-20-2025
+https://sport.detik.com/sepakbola/liga-inggris/d-7071143/man-city-mulai-diragukan
+https://sport.detik.com/raket/d-7071196/demi-medali-olimpiade-gregoria-bertekad-lebih-stabil-tahun-depan
+https://sport.detik.com/sepakbola/liga-indonesia/d-7071380/pssi-dan-fas-mau-duet-jadi-tuan-rumah-piala-dunia-u-20-atau-u-17
+https://sport.detik.com/sepakbola/liga-inggris/d-7071139/man-city-sudah-kebobolan-16-gol-tak-sesuai-harapan-ruben-dias
+https://sport.detik.com/sepakbola/liga-inggris/d-7071136/hampir-tiga-tahun-martial-nggak-pernah-main-90-menit-di-mu
+https://sport.detik.com/sepakbola/liga-italia/d-7071024/lupakan-scudetto-napoli-kini-kalah-kelas-dari-inter
+https://sport.detik.com/sepakbola/liga-inggris/d-7071022/simpati-ange-postecoglou-lihat-guardiola-marah-marah
+https://sport.detik.com/raket/d-7071134/gregoria-waspadai-faktor-nonteknis-di-bwf-world-tour-finals
+https://sport.detik.com/sepakbola/liga-inggris/d-7070967/klopp-pun-tak-menyangka-liverpool-vs-fulham-bakal-seseru-ini
+https://sport.detik.com/sepakbola/liga-inggris/d-7070962/haaland-pelototi-wasit-guardiola-saya-mau-bilang-apa
+https://sport.detik.com/sepakbola/liga-spanyol/d-7070960/barcelona-vs-atletico-blaugrana-nyaris-sempurna
+https://sport.detik.com/raket/d-7070979/jelang-world-tour-finals-2023-bagaimana-otot-lutut-ginting
+https://sport.detik.com/sepakbola/liga-indonesia/d-7070851/sepakbola-indonesia-dalam-15-hari-ada-3-kerusuhan-suporter
+https://sport.detik.com/sepakbola/liga-inggris/d-7070831/guardiola-mau-emosi-tapi-sadar-wasit-juga-manusia
+https://sport.detik.com/raket/d-7070871/fadya-kalahkan-celly-di-32-besar-bni-sirnas-b-riau-2023
+https://sport.detik.com/sepakbola/liga-inggris/d-7070830/dua-laga-terakhir-chelsea-kapten-dan-wakilnya-kena-kartu-merah
+https://sport.detik.com/sepakbola/foto-sepakbola/d-7070776/jarang-terjadi-haaland-mencak-mencak-ke-wasit
+https://sport.detik.com/sepakbola/liga-inggris/d-7070513/newcastle-vs-mu-momen-maguire-gagalkan-gol-antony
+https://sport.detik.com/raket/d-7070760/113-klub-bulutangkis-nasional-ramaikan-bni-sirnas-b-riau-2023
+https://sport.detik.com/sepakbola/liga-spanyol/d-7070613/joao-felix-dicemooh-dulu-tumbangkan-atletico-kemudian
+https://sport.detik.com/sepakbola/liga-inggris/d-7070571/geramnya-erling-haaland-dengan-wasit-simon-hooper
+https://sport.detik.com/sepakbola/liga-inggris/d-7070510/man-city-lagi-susah-kalahkan-tim-big-six-kecuali-mu
+https://sport.detik.com/sepakbola/liga-italia/d-7070490/si-ular-besar-unjuk-kekuatan-di-naples
+https://sport.detik.com/sepakbola/liga-inggris/d-7070524/klasemen-liga-inggris-arsenal-memimpin-empat-besar-ketat
+https://www.detik.com/tag/bni-sirnas-2023
+https://sport.detik.com/sepakbola/liga-indonesia/d-7072296/bhayangkara-fc-kontrak-radja-nainggolan-rp-5-miliar
+https://sport.detik.com/sepakbola/liga-spanyol/d-7072298/alasan-joao-felix-tak-sungkan-rayakan-gol-ke-gawang-atletico-madrid
+https://sport.detik.com/sepakbola/liga-indonesia/d-7072185/bhayangkara-fc-resmi-perkenalkan-radja-nainggolan
+https://sport.detik.com/sepakbola/liga-inggris/d-7071836/man-city-melambat-guardiola-bukan-karena-apes
+https://sport.detik.com/sepakbola/liga-inggris/d-7071730/paul-scholes-sebut-mu-kini-tim-sampah-banyak-pemain-malas
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita dari kategori https://travel.detik.com/:
+https://travel.detik.com/travel-news/d-7070751/apgi-belasan-pendaki-tewas-imbas-erupsi-gunung-marapi
+https://travel.detik.com/travel-news/d-7070908/tipe-letusan-gunung-marapi-kali-ini-mematikan
+https://travel.detik.com/travel-news/d-7070286/jangan-mati-dulu-sebelum-ke-bromo
+https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
+https://travel.detik.com/travel-news/d-7069698/calo-tiket-konser-bak-kutu-busuk-sulit-diberantas-butuh-langkah-tegas
+https://travel.detik.com/travel-news/d-7072175/demi-tutupi-usia-asli-dari-pacar-cewek-china-nekat-palsukan-paspor
+https://travel.detik.com/travel-news/d-7066866/kamerun-dihapus-dari-daftar-calling-visa-imigrasi-ri-kenapa
+https://travel.detik.com/travel-news/d-7065760/panda-gemoi-makan-di-meja-malah-dianggap-panda-palsu
+https://travel.detik.com/highlight/6921/wisata-gadis-kretek
+https://travel.detik.com/highlight/6919/taman-ujung-seindah-itu
+https://travel.detik.com/highlight/6910/samsara-living-museum
+https://travel.detik.com/travel-news/d-7072016/dahsyatnya-letusan-gunung-marapi-dan-belasan-korban-disorot-media-asing
+https://travel.detik.com/travel-news/d-7072170/erupsi-gunung-marapi-telan-11-korban-jiwa-menparekraf-utamakan-bantuan
+https://travel.detik.com/domestic-destination/d-7070628/muntilan-dijuluki-betlehem-van-java-museum-ini-simpan-sejarahnya
+https://20.detik.com/detikupdate/20231204-231204139/-tinjau-dampak-erupsi-kemenparekraf-bakal-ke-sumbar-minggu-ini
+https://travel.detik.com/travel-news/d-7069698/calo-tiket-konser-bak-kutu-busuk-sulit-diberantas-butuh-langkah-tegas
+https://travel.detik.com/domestic-destination/d-7071840/serial-gadis-kretek-ternyata-syuting-di-rumah-bersejarah-ini
+https://travel.detik.com/travel-news/d-7072022/hampir-1-000-penerbangan-ryanair-dibatalkan-karena-perang-israel-hamas
+https://travel.detik.com/domestic-destination/d-7071930/12-ide-wisata-anti-mainstream-sekitar-jakarta
+https://travel.detik.com/cerita-perjalanan/d-7071774/satu-lagi-hidden-gem-di-bogor-wisata-alam-sereuh-hejo
+https://travel.detik.com/travel-news/d-7071546/gara-gara-film-85-turis-china-takut-liburan-ke-asean
+https://20.detik.com/detikupdate/20231204-231204118/parade-natal-tandai-100-tahun-disney-di-chili
+https://travel.detik.com/fototravel/d-7071372/serunya-rekreasi-sambil-belajar-di-wisata-kerajinan-batik-jambi
+https://travel.detik.com/domestic-destination/d-7071541/sejarah-stasiun-manggarai-dan-6-fakta-menariknya-punya-18-jalur-aktif
+https://travel.detik.com/travel-news/d-7071688/ini-perbedaan-gunung-marapi-dan-merapi-dari-lokasi-hingga-ketinggian
+https://travel.detik.com/travel-news/d-7071538/erupsi-gunung-marapi-warga-diimbau-pakai-masker-dan-waspada-ispa
+https://travel.detik.com/fototravel/d-7071148/menikmati-lanskap-bromo-taman-nasional-terindah-ketiga-di-dunia
+https://travel.detik.com/domestic-destination/d-7071349/situs-watu-gilang-yang-bikin-penasaran-ada-banyak-ukiran
+https://travel.detik.com/domestic-destination/d-7071253/main-ke-jakarta-escape-paling-asyik-akhir-pekan
+https://travel.detik.com/domestic-destination/d-7070974/yang-hijau-hijau-dari-kulon-progo-kebun-teh-nglinggo
+https://travel.detik.com/travel-news/d-7071243/american-airlines-dituntut-karena-rekam-penumpang-di-toilet
+https://travel.detik.com/travel-news/d-7070615/kisah-burung-perkutut-yang-konon-jelmaan-pangeran-pajajaran
+https://travel.detik.com/travel-news/d-7071057/fakta-gunung-marapi-gunung-api-aktif-di-minangkabau
+https://travel.detik.com/travel-news/d-7070908/tipe-letusan-gunung-marapi-kali-ini-mematikan
+https://travel.detik.com/travel-news/d-7070858/tiada-tempat-berlindung-di-area-puncak-gunung-marapi
+https://travel.detik.com/travel-news/d-7070823/11-pendaki-tewas-di-gunung-marapi-49-orang-berhasil-dievakuasi
+https://travel.detik.com/travel-news/d-7070751/apgi-belasan-pendaki-tewas-imbas-erupsi-gunung-marapi
+https://travel.detik.com/travel-news/d-7070569/mengenal-tradisi-tumpe-ajang-persaudaraan-masyarakat-banggai
+https://travel.detik.com/travel-news/d-7070531/pendaki-cewek-ngamuk-jaket-waterproofnya-basah-eh-langsung-diganti-baru
+https://travel.detik.com/travel-news/d-7070496/gunung-marapi-erupsi-jalur-pendakian-ditutup
+https://travel.detik.com/fototravel/d-7070128/serunya-naik-kano-susuri-sungai-di-taman-nasional-bantimurung-bulusaraung
+https://travel.detik.com/travel-news/d-7070487/memotret-panorama-pantjoran-pik-bersama-jelajah-lensa-jakarta
+https://www.detik.com/tag/wisata-jakarta
+https://www.detik.com/tag/wisata-bogor
+https://www.detik.com/tag/desa-wisata
+https://www.detik.com/tag/kota-hantu
+https://www.detik.com/tag/harta-karun
+https://travel.detik.com/travel-news/d-7072016/dahsyatnya-letusan-gunung-marapi-dan-belasan-korban-disorot-media-asing
+https://travel.detik.com/travel-news/d-7072175/demi-tutupi-usia-asli-dari-pacar-cewek-china-nekat-palsukan-paspor
+https://travel.detik.com/travel-news/d-7072170/erupsi-gunung-marapi-telan-11-korban-jiwa-menparekraf-utamakan-bantuan
+https://travel.detik.com/domestic-destination/d-7071840/serial-gadis-kretek-ternyata-syuting-di-rumah-bersejarah-ini
+https://travel.detik.com/travel-news/d-7071546/gara-gara-film-85-turis-china-takut-liburan-ke-asean
+https://travel.detik.com/travel-news/d-7066768/pendaki-ngamuk-jaket-anti-airnya-basah-kuyup-balasan-apparel-tak-disangka
+https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
+https://travel.detik.com/travel-news/d-7063700/lecehkan-wisatawan-bawah-umur-di-malioboro-pemuda-digebuki-warga
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita dari kategori https://food.detik.com/:
+https://food.detik.com/info-kuliner/d-7069699/pria-ini-gagal-menangkan-tantangan-makan-meski-sudah-makan-4-500-kalori
+https://food.detik.com/info-kuliner/d-7069071/haru-pengantar-makanan-ini-berhasil-selamatkan-nyawa-pelanggannya
+https://food.detik.com/info-kuliner/d-7067855/stok-telur-dalam-keadaan-beku-netizen-ini-tuai-kritik-pedas
+https://food.detik.com/info-kuliner/d-7068587/codeblu-angkat-bicara-soal-masterchef-indonesia-ini-komentarnya
+https://food.detik.com/info-kuliner/d-7065281/bikin-rugi-pengunjung-ini-sengaja-tempel-qris-miliknya-di-restoran
+https://food.detik.com/foto-kuliner/d-7071852/senang-masak-jin-bts-coba-bikin-arak-dan-sajikan-daging-babi
+https://food.detik.com/foto-kuliner/d-7071949/dida-sinclair-mertua-idaman-yang-hobi-berkebun-dan-memasak
+https://food.detik.com/info-kuliner/d-7071198/kafe-maid-ini-beri-pelayanan-kasar-pada-pengunjung-ditampar-dan-diguyur-minuman
+https://food.detik.com/cooking-event/d-7070857/sania-baking-class-5-resep-kue-spesial-tahun-baru-bonus-mikser-dan-loyang-gratis
+https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-yang-kini-jadi-cagar-budaya
+https://food.detik.com/info-kuliner/d-7071562/pengunjung-kaget-restoran-menipunya-dengan-lakukan-trik-ini
+https://food.detik.com/foto-kuliner/d-7071174/cafe-batavia-kafe-jaman-belanda-yang-jadi-cagar-budaya
+https://food.detik.com/info-kuliner/d-7071191/kocak-driver-ojol-ini-pakai-kostum-pikachu-untuk-antar-makanan
+https://food.detik.com/resto-dan-kafe/d-7071554/loaf-bun-legitnya-goguma-ppang-dan-roti-jagung-di-bakery-korea-hits
+https://food.detik.com/info-kuliner/d-7071159/rugi-bandar-toko-buah-ini-kecurian-18-kotak-durian
+https://food.detik.com/info-kuliner/d-7071334/duh-penemuan-tikus-di-dapur-rumah-sakit-ini-bikin-ngeri
+https://food.detik.com/info-kuliner/d-7071444/4-driver-ojol-ini-ditraktir-bule-di-bali-cicip-tacos-hingga-makanan-lebanon
+https://food.detik.com/berita-boga/d-7071063/martabak-manis-dari-fujian-jadi-menu-makan-malam-pekerja-tambang-timah
+https://food.detik.com/foto-kuliner/d-7070798/gurih-renyah-tempe-mendoan-rp-2-000-ada-di-20-tempat-ini
+https://food.detik.com/info-kuliner/d-7070850/bcl-dan-tiko-sajikan-menu-tradisional-bali-di-pesta-penikahan
+https://food.detik.com/berita-boga/d-7070775/laris-manis-tipat-cantok-mie-warung-dot-raih-omzet-rp-50-juta-sebulan
+https://food.detik.com/foto-kuliner/d-7069793/kenyal-garing-bakso-gepeng-bewok-yang-viral-di-gading-serpong
+https://food.detik.com/info-kuliner/d-7070770/5-restoran-ini-tawarkan-bebek-peking-dengan-nasi-hainan-dan-bakmi
+https://food.detik.com/berita-boga/d-7070326/30-tahun-beroperasi-cafe-batavia-dijadikan-cagar-budaya-dki-jakarta
+https://food.detik.com/sayur/d-7069311/resep-oseng-petai-dan-bawang-bombay-yang-renyah-pedas-untuk-lauk-nasi
+https://food.detik.com/info-kuliner/d-7069789/seperti-menu-di-restoran-5-makanan-rumah-sakit-ini-bikin-ngiler
+https://food.detik.com/sayur/d-7069275/resep-tumis-bayam-dan-teri-lauk-sederhana-yang-segar-dan-gurih
+https://food.detik.com/berita-boga/d-7070491/pengantar-makanan-selamatkan-nyawa-pelanggan-hingga-pria-gagal-menangkan-tantangan-makan
+https://food.detik.com/sup-dan-salad/d-7069338/3-resep-soto-khas-sumatera-berbumbu-rempah-untuk-penghangat-badan
+https://food.detik.com/foto-kuliner/d-7068206/rela-antre-panjang-demi-chicken-steak-buatan-mantan-pramugari
+https://food.detik.com/info-kuliner/d-7070423/anti-mainstream-wanita-ini-dapat-hantaran-makanan-di-hari-wisudanya
+https://food.detik.com/info-kuliner/d-7069713/5-kopitiam-ini-punya-paket-sarapan-klasik-kopi-o-hingga-kaya-toast
+https://food.detik.com/info-kuliner/d-7069785/gurih-medhok-hucap-khas-kuningan-yang-sederhana-dan-legendaris
+https://food.detik.com/info-kuliner/d-7069783/ketahui-5-jenis-kopi-hitam-yang-nikmat-dan-aromanya-khas
+https://food.detik.com/info-sehat/d-7069791/nasi-nol-kalori-populer-untuk-turunkan-bb-apakah-aman-dikonsumsi
+https://food.detik.com/foto-kuliner/d-7070204/momen-kulineran-marshel-widianto-bareng-rekan-artis
+https://food.detik.com/foto-kuliner/d-7070145/keseruan-sandra-dewi-saat-ngopi-di-melbourne-dan-makan-di-restoran-mewah
+https://food.detik.com/info-kuliner/d-7069699/pria-ini-gagal-menangkan-tantangan-makan-meski-sudah-makan-4-500-kalori
+https://food.detik.com/info-kuliner/d-7069033/5-restoran-ini-terpaksa-tutup-gegara-dapurnya-kotor-ada-tikus-hingga-kecoak
+https://20.detik.com/detikupdate/20231203-231203080/pelestarian-kuliner-bulung-di-serangan-festival-2023
+https://food.detik.com/info-kuliner/d-7069046/rekomendasi-5-kopitiam-modern-di-jakarta-yang-cocok-untuk-hangout
+https://food.detik.com/info-kuliner/d-7069652/apes-pria-ini-muntah-muntah-usai-temukan-kecoak-dalam-ramennya
+https://food.detik.com/info-kuliner/d-7069067/pecahkan-rekor-dunia-dua-pria-ini-pergi-ke-99-bar-dalam-sehari
+https://food.detik.com/info-kuliner/d-7069064/5-kopitiam-kekinian-di-bogor-yang-ramai-disambangi-untuk-hangout
+https://food.detik.com/info-kuliner/d-7069028/beli-pisang-goreng-rp-6-ribuan-pelanggan-kaget-bentuknya-mirip-ikan-bilis
+https://food.detik.com/pengalaman-bersantap/d-7069418/murah-meriah-ada-kopi-o-dan-nasi-lemak-ala-medan-di-kopitiam-ini
+https://food.detik.com/info-kuliner/d-7069071/haru-pengantar-makanan-ini-berhasil-selamatkan-nyawa-pelanggannya
+https://food.detik.com/mie-dan-pasta/d-7068047/resep-spaghetti-tumis-seafood-dan-cabe-yang-pedas-menyengat-untuk-makan-malam
+https://food.detik.com/info-kuliner/d-7069163/5-kuliner-menarik-di-fresh-market-bintaro-buat-jajan-akhir-pekan
+https://food.detik.com/mie-dan-pasta/d-7067918/3-resep-mie-ayam-populer-yang-gurih-enak-dimakan-bareng-keluarga
+https://food.detik.com/foto-kuliner/d-7069035/gede-banget-ada-bakso-rusuk-jumbo-di-warung-andalan-nex-carlos
+https://food.detik.com/info-kuliner/d-7069161/selain-pakai-sumpit-telur-tornado-bisa-dibikin-dengan-cara-ini
+https://food.detik.com/info-kuliner/d-7069022/cappuccino-kering-tidak-seperti-yang-dibayangkan-ini-racikan-aslinya
+https://food.detik.com/info-sehat/d-7069000/berapa-jumlah-kalori-satu-piring-nasi-putih-ini-penjelasannya
+https://food.detik.com/info-kuliner/d-7068999/7-cara-praktis-dan-mudah-atasi-kulkas-yang-tidak-dingin
+https://food.detik.com/info-sehat/d-7068980/7-sayuran-terbaik-untuk-kontrol-gula-darah-penderta-diabetes
+https://www.detik.com/tag/50-resep-dan-tips-olahan-daging-kurban
+https://food.detik.com/foto-kuliner/d-7071949/dida-sinclair-mertua-idaman-yang-hobi-berkebun-dan-memasak
+https://food.detik.com/info-kuliner/d-7071198/kafe-maid-ini-beri-pelayanan-kasar-pada-pengunjung-ditampar-dan-diguyur-minuman
+https://food.detik.com/foto-kuliner/d-7071852/senang-masak-jin-bts-coba-bikin-arak-dan-sajikan-daging-babi
+https://food.detik.com/info-kuliner/d-7071562/pengunjung-kaget-restoran-menipunya-dengan-lakukan-trik-ini
+https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-yang-kini-jadi-cagar-budaya
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Menyiapkan file CSV</span>
+<span class="n">csv_file_path</span> <span class="o">=</span> <span class="s1">&#39;detik_news.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Nomor&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;Judul Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Crawl berita untuk setiap kategori</span>
+    <span class="k">for</span> <span class="n">category_url</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+        <span class="n">news_links</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+
+        <span class="c1"># Menyimpan hasil ke dalam file CSV</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">news_links</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">category_url</span><span class="p">,</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">link</span><span class="p">])</span>
+
+<span class="c1"># Menampilkan pesan jika penyimpanan berhasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data telah disimpan dalam file CSV: </span><span class="si">{</span><span class="n">csv_file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data telah disimpan dalam file CSV: detik_news.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/detik_news.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-4ecad19c346d&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/detik_news.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Crawling%20Berita%20Online.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawling Berita Online</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 20-168 Rania Nuraini
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
