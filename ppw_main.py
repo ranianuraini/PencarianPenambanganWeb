@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import Sastrawi
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
