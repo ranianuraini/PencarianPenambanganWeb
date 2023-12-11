@@ -6,4 +6,4 @@ matplotlib == 3.5.2
 matplotlib-inline == 0.1.6
 seaborn == 0.11.2
 scikit-learn
-Sastrawi
+Sastrawi == 1.0.1
