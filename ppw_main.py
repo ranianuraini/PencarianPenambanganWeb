@@ -1,89 +1,37 @@
-# Install streamlit jika belum terinstal
-# pip install streamlit
-
 import streamlit as st
-import requests
-from bs4 import BeautifulSoup
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-def scrape_data(url):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    first_page = soup.findAll('li', "dropdown mega-full menu-color1")
+# Muat model dan vectorizer yang telah dilatih
+# Gantilah 'your_model.pkl' dan 'your_vectorizer.pkl' dengan nama file sesungguhnya
+import pickle
+with open('your_model.pkl', 'rb') as model_file:
+    nb_classifier = pickle.load(model_file)
 
-    save_categories = []
-    for links in first_page:
-        category = links.find('a').get('href')
-        save_categories.append(category)
+with open('your_vectorizer.pkl', 'rb') as vectorizer_file:
+    vectorizer = pickle.load(vectorizer_file)
 
-    category_search = [save_categories[5], save_categories[6], save_categories[9]]
-    datas = []
+# Aplikasi Streamlit
+st.title('Prediksi Kategori Berita')
 
-    for ipages in range(1, 25):
-        for category in category_search:
-            response_news = requests.get(category + "/" + str(ipages))
-            name_category = category.split("/")
-            soup_news = BeautifulSoup(response_news.text, 'html.parser')
-            pages_news = soup_news.findAll('article', {'class': 'simple-post simple-big clearfix'})
+# Input teks untuk pengguna memasukkan artikel berita
+user_input = st.text_area("Masukkan artikel berita Anda:", "")
 
-            for items in pages_news:
-                get_link_in = items.find("a").get("href")
-                response_article = requests.get(get_link_in)
-                soup_article = BeautifulSoup(response_article.text, 'html.parser')
+if st.button('Prediksi'):
+    # Pembersihan dan pemrosesan teks
+    user_input = cleaning(user_input)
+    user_input_tokens = word_tokenize(user_input)
+    user_input_tokens = [w for w in user_input_tokens if not w in stop_words]
+    user_input_tokens = stemmer.stem(' '.join(user_input_tokens)).split(' ')
+    user_input_tokens = ' '.join(user_input_tokens)
 
-                check_title = soup_article.findAll("h1", "post-title")
-                if check_title:
-                    title = soup_article.find("h1", "post-title").text
-                else:
-                    title = ""
+    # Transformasi input pengguna menggunakan vectorizer
+    user_input_tfidf = vectorizer.transform([user_input_tokens])
 
-                label = name_category[-1]
+    # Melakukan prediksi menggunakan klasifikasi Naive Bayes yang telah dilatih
+    prediction = nb_classifier.predict(user_input_tfidf)
 
-                try:
-                    date = soup_article.find("span", "article-date").text
-                except AttributeError:
-                    date = "Data tanggal tidak ditemukan"
-
-                check_read_more = soup_article.findAll("span", "baca-juga")
-                trash1 = ""
-                if check_read_more:
-                    for read_more in check_read_more:
-                        text_trash = read_more.text
-                        trash1 += text_trash + ' '
-                else:
-                    trash1 = ""
-
-                articles = soup_article.find_all('div', {'class': 'post-content clearfix'})
-                if articles:
-                    article_content = soup_article.find('div', {'class': 'post-content clearfix'}).text
-                    article = article_content.replace("\n", " ").replace("\t", " ").replace("\r", "") \
-                        .replace(trash1, "").replace("\xa0", "")
-                else:
-                    article = ""
-
-                check_author = soup_article.findAll("p", "text-muted small mt10")
-                if check_author:
-                    author = soup_article.find("p", "text-muted small mt10").text.replace("\t\t", " ")
-                else:
-                    author = ""
-
-                datas.append({
-                    'Tanggal': date,
-                    'Penulis': author,
-                    'Judul': title,
-                    'Artikel': article,
-                    'Label': label
-                })
-
-    return datas
-
-def main():
-    st.title("Aplikasi Berita Streamlit")
-
-    url = "https://www.antaranews.com/"
-    datas = scrape_data(url)
-
-    st.write("## Data Berita")
-    st.write(datas)
-
-if __name__ == "__main__":
-    main()
+    st.subheader('Prediksi:')
+    st.write(f"Kategori yang diprediksi untuk artikel yang diberikan adalah: {prediction[0]}")
