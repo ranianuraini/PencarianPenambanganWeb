@@ -65,7 +65,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'UAS';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Crawling Berita Online" href="Crawling%20Berita%20Online.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,13 +166,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20PTA%20Trunojoyo.html">Crawling Website PTA Trunojoyo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Preprocessing%20Hasil%20Crawling.html">Preprocessing Data Text</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Reduksi%20Dimensi%20Feature.html">Implementasi Reduksi Dimensi PTA Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling%20Berita%20Online.html">Crawling Berita Online</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UAS</a></li>
 </ul>
 
     </div>
@@ -398,7 +396,11 @@ document.write(`
     <span class="k">return</span> <span class="n">news_links</span>
 
 <span class="c1"># Kategori yang akan di-crawl</span>
-<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">]</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;olahraga&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;travel&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;makanan&#39;</span>
+<span class="p">}</span>
 
 <span class="c1"># Crawl berita untuk setiap kategori</span>
 <span class="k">for</span> <span class="n">category_url</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
@@ -413,197 +415,200 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita dari kategori https://sport.detik.com/:
-https://sport.detik.com/moto-gp/d-7068676/komentar-valentino-rossi-lihat-marc-marquez-gabung-ke-ducati
-https://sport.detik.com/sport-lain/d-7066828/cari-desak-made-baru-fpti-gelar-kejurnas-panjat-tebing
-https://sport.detik.com/moto-gp/d-7065304/bagnaia-puas-dengan-motor-baru-ducati-tapi-bisa-lebih-oke-lagi
-https://sport.detik.com/g-sport/d-7067249/jonatan-christie-resmi-nikahi-shanju-eks-jkt48
-https://sport.detik.com/raket/d-7066950/6-wakil-indonesia-di-bwf-world-tour-finals-2023
-https://sport.detik.com/sport-lain/d-7071648/atlet-para-cycling-ri-raih-3-emas-di-world-abilitysport-games-2023
-https://sport.detik.com/sport-lain/d-7002733/asian-para-games-balap-sepeda-kembali-sumbang-emas-kini-dari-m-fadli
-https://sport.detik.com/sport-lain/d-6848700/karena-olahraga-bisa-dilakukan-di-mana-saja
-https://sport.detik.com/sepakbola/liga-italia/d-7072323/inter-milan-harus-hati-hati-dengan-juventus-ini-alasannya
-https://sport.detik.com/sepakbola/liga-spanyol/d-7072298/alasan-joao-felix-tak-sungkan-rayakan-gol-ke-gawang-atletico-madrid
-https://sport.detik.com/sepakbola/liga-indonesia/d-7072296/bhayangkara-fc-kontrak-radja-nainggolan-rp-5-miliar
-https://sport.detik.com/sepakbola/liga-inggris/d-7071836/man-city-melambat-guardiola-bukan-karena-apes
-https://sport.detik.com/sepakbola/liga-indonesia/d-7072257/persib-vs-psm-tuntas-tanpa-pemenang
-https://sport.detik.com/sepakbola/liga-indonesia/d-7072185/bhayangkara-fc-resmi-perkenalkan-radja-nainggolan
-https://sport.detik.com/sepakbola/liga-inggris/d-7071786/jorginho-ingatkan-arsenal-jangan-buru-buru-lepas-pedal
-https://sport.detik.com/sepakbola/liga-spanyol/d-7071785/xavi-bahagia-barcelona-punya-joao-felix
-https://sport.detik.com/fotosport/d-7071789/foto-aksi-ciamik-para-pebulutangkis-muda-bni-sirnas-b-di-pekanbaru
-https://sport.detik.com/sepakbola/liga-italia/d-7071731/barella-juventus-lawan-sulit-karena-jago-bertahan
-https://sport.detik.com/sepakbola/liga-inggris/d-7071730/paul-scholes-sebut-mu-kini-tim-sampah-banyak-pemain-malas
-https://sport.detik.com/sepakbola/liga-indonesia/d-7071445/daftar-kerusuhan-suporter-di-liga-1-2023-2024
-https://sport.detik.com/sepakbola/foto-sepakbola/d-7071460/meme-haaland-ngamuk
-https://sport.detik.com/sepakbola/liga-inggris/d-7071447/pemain-chelsea-ini-rayakan-gol-perdana-mendadak-berhenti-karena
-https://sport.detik.com/sepakbola/liga-inggris/d-7071383/sudah-bosan-juara-manchester-city
-https://sport.detik.com/sepakbola/liga-italia/d-7071717/van-de-beek-dikabarkan-menuju-juventus
-https://sport.detik.com/sepakbola/liga-indonesia/d-7071834/kata-jokowi-soal-ri-calonkan-diri-jadi-tuan-rumah-piala-dunia-u-20-2025
-https://sport.detik.com/sepakbola/liga-inggris/d-7071146/lagi-lagi-kode-emoji-david-de-gea
-https://sport.detik.com/sepakbola/liga-spanyol/d-7071027/joao-felix-permanenkan-aku-barcelona
-https://sport.detik.com/sepakbola/liga-indonesia/d-7071733/bali-united-vs-arema-fc-serdadu-tridatu-menang-3-2
-https://sport.detik.com/sepakbola/detiktv/d-7071713/jokowi-minta-pssi-jajaki-peluang-jadi-tuan-rumah-pildun-u-20-2025
-https://sport.detik.com/sepakbola/liga-inggris/d-7071140/mengapa-ten-hag-mainkan-luke-shaw-lagi-di-posisi-bek-tengah
-https://sport.detik.com/raket/d-7071544/dzaky-kalahkan-khadafi-maju-ke-64-besar-bni-sirnas-b-pekanbaru
-https://sport.detik.com/sepakbola/liga-indonesia/d-7071141/marak-rusuh-suporter-saatnya-terapkan-sanksi-pengurangan-poin-di-liga-1
-https://sport.detik.com/sepakbola/detiktv/d-7071561/jokowi-soal-timnas-u-17-perlu-proses-tak-bisa-instan-jadi-juara
-https://sport.detik.com/sepakbola/liga-indonesia/d-7071483/indonesia-siap-calonkan-diri-jadi-tuan-rumah-piala-dunia-u-20-2025
-https://sport.detik.com/sepakbola/liga-inggris/d-7071143/man-city-mulai-diragukan
-https://sport.detik.com/raket/d-7071196/demi-medali-olimpiade-gregoria-bertekad-lebih-stabil-tahun-depan
-https://sport.detik.com/sepakbola/liga-indonesia/d-7071380/pssi-dan-fas-mau-duet-jadi-tuan-rumah-piala-dunia-u-20-atau-u-17
-https://sport.detik.com/sepakbola/liga-inggris/d-7071139/man-city-sudah-kebobolan-16-gol-tak-sesuai-harapan-ruben-dias
-https://sport.detik.com/sepakbola/liga-inggris/d-7071136/hampir-tiga-tahun-martial-nggak-pernah-main-90-menit-di-mu
-https://sport.detik.com/sepakbola/liga-italia/d-7071024/lupakan-scudetto-napoli-kini-kalah-kelas-dari-inter
-https://sport.detik.com/sepakbola/liga-inggris/d-7071022/simpati-ange-postecoglou-lihat-guardiola-marah-marah
-https://sport.detik.com/raket/d-7071134/gregoria-waspadai-faktor-nonteknis-di-bwf-world-tour-finals
-https://sport.detik.com/sepakbola/liga-inggris/d-7070967/klopp-pun-tak-menyangka-liverpool-vs-fulham-bakal-seseru-ini
-https://sport.detik.com/sepakbola/liga-inggris/d-7070962/haaland-pelototi-wasit-guardiola-saya-mau-bilang-apa
-https://sport.detik.com/sepakbola/liga-spanyol/d-7070960/barcelona-vs-atletico-blaugrana-nyaris-sempurna
-https://sport.detik.com/raket/d-7070979/jelang-world-tour-finals-2023-bagaimana-otot-lutut-ginting
-https://sport.detik.com/sepakbola/liga-indonesia/d-7070851/sepakbola-indonesia-dalam-15-hari-ada-3-kerusuhan-suporter
-https://sport.detik.com/sepakbola/liga-inggris/d-7070831/guardiola-mau-emosi-tapi-sadar-wasit-juga-manusia
-https://sport.detik.com/raket/d-7070871/fadya-kalahkan-celly-di-32-besar-bni-sirnas-b-riau-2023
-https://sport.detik.com/sepakbola/liga-inggris/d-7070830/dua-laga-terakhir-chelsea-kapten-dan-wakilnya-kena-kartu-merah
-https://sport.detik.com/sepakbola/foto-sepakbola/d-7070776/jarang-terjadi-haaland-mencak-mencak-ke-wasit
-https://sport.detik.com/sepakbola/liga-inggris/d-7070513/newcastle-vs-mu-momen-maguire-gagalkan-gol-antony
-https://sport.detik.com/raket/d-7070760/113-klub-bulutangkis-nasional-ramaikan-bni-sirnas-b-riau-2023
-https://sport.detik.com/sepakbola/liga-spanyol/d-7070613/joao-felix-dicemooh-dulu-tumbangkan-atletico-kemudian
-https://sport.detik.com/sepakbola/liga-inggris/d-7070571/geramnya-erling-haaland-dengan-wasit-simon-hooper
-https://sport.detik.com/sepakbola/liga-inggris/d-7070510/man-city-lagi-susah-kalahkan-tim-big-six-kecuali-mu
-https://sport.detik.com/sepakbola/liga-italia/d-7070490/si-ular-besar-unjuk-kekuatan-di-naples
-https://sport.detik.com/sepakbola/liga-inggris/d-7070524/klasemen-liga-inggris-arsenal-memimpin-empat-besar-ketat
+https://sport.detik.com/moto-gp/d-7081244/quartararo-ancam-yamaha-lagi
+https://sport.detik.com/moto-gp/d-7081294/ducati-buka-peluang-rekrut-marc-marquez-untuk-motogp-2025
+https://sport.detik.com/moto-gp/d-7079593/marc-marquez-sadar-bisa-saja-tak-sukses-di-ducati
+https://sport.detik.com/raket/d-7077799/ini-target-jonatan-christie-di-bwf-world-tour-finals-2023
+https://sport.detik.com/sport-lain/d-7078107/perkuat-sport-tourism-di-ntb-menparekraf-dukung-porsche-sprint-challenge
+https://sport.detik.com/sport-lain/d-7084572/usai-sukses-di-kejuaraan-dunia-pb-pertacami-berharap-jadi-anggota-koi
+https://sport.detik.com/sport-lain/d-7079915/ingin-nonton-one-pride-mma-75-begini-caranya
+https://sport.detik.com/sport-lain/d-7078082/one-pride-mma-75-ade-permana-vs-lipin-sitorus-ujian-sang-raja-kelas-atom
+https://sport.detik.com/sepakbola/bola-dunia/d-7084608/top-cristiano-ronaldo-sudah-50-gol-di-2023
+https://sport.detik.com/sepakbola/uefa/d-7084576/psv-vs-arsenal-waktunya-ramsdale-debut-liga-champions
+https://sport.detik.com/sepakbola/uefa/d-7084575/mu-vs-bayern-sebuah-mission-impossible-buat-setan-merah
+https://sport.detik.com/sepakbola/uefa/d-7084574/inter-milan-vs-sociedad-peluang-besar-nerazzurri-juara-grup
+https://sport.detik.com/sepakbola/liga-inggris/d-7084557/mctominay-skuad-mu-dukung-ten-hag-karena-enggak-toxic
+https://sport.detik.com/sepakbola/bola-dunia/d-7084579/osimhen-raih-penghargaan-pesepakbola-terbaik-afrika-2023
+https://sport.detik.com/sepakbola/liga-italia/d-7084556/inzaghi-ingin-tiru-jejak-guardiola-dan-klopp
+https://sport.detik.com/sepakbola/liga-inggris/d-7084555/rio-ferdinand-marcus-rashford-gak-konsisten
+https://sport.detik.com/sepakbola/bola-dunia/d-7084569/al-shabab-vs-al-nassr-menang-5-2-ronaldo-cs-ke-semifinal-piala-raja
+https://sport.detik.com/sepakbola/uefa/d-7084552/ten-hag-mu-memang-inkonsisten-tapi-bisa-bungkam-siapapun
+https://sport.detik.com/sepakbola/liga-italia/d-7084542/juventus-akui-incar-kalvin-phillips
+https://sport.detik.com/sepakbola/liga-indonesia/d-7084545/nusantara-open-digelar-lagi-bersinergi-dengan-pssi
+https://sport.detik.com/sepakbola/bola-dunia/d-7084533/al-hilal-vs-al-taawoun-blue-waves-menang-3-0-lolos-ke-semifinal-piala-raja
+https://sport.detik.com/basket/d-7084529/pindah-ke-kota-hujan-rans-simba-bogor-antusias-sambut-ibl-2024
+https://sport.detik.com/sepakbola/liga-inggris/d-7084505/duh-bruno-fernandes-disentil-sir-jim-ratcliffe
+https://sport.detik.com/sepakbola/liga-italia/d-7084453/ibu-rabiot-anakku-sepakati-kontrak-baru-di-juve-gak-tuh
+https://sport.detik.com/sepakbola/liga-inggris/d-7084243/mu-tak-berniat-aktifkan-opsi-perpanjangan-kontrak-martial
+https://sport.detik.com/sepakbola/bola-dunia/d-7084241/jadwal-piala-dunia-antarklub-2023
+https://sport.detik.com/sepakbola/liga-spanyol/d-7084064/bisa-menang-di-kandang-barcelona-girona-tak-bisa-berkata-kata
+https://sport.detik.com/sepakbola/liga-inggris/d-7084072/mengapa-anthony-martial-masih-jadi-starter-ten-hag
+https://sport.detik.com/moto-gp/d-7084388/pedro-acosta-anak-ajaib-yang-ramaikan-persaingan-motogp-2024
+https://sport.detik.com/sepakbola/foto-sepakbola/d-7084059/ke-mana-luis-suarez-pergi-selalu-jadi-yang-terbaik
+https://sport.detik.com/sepakbola/liga-inggris/d-7084050/bruno-fernandes-dianggap-kapten-yang-buruk-untuk-mu
+https://sport.detik.com/sepakbola/liga-italia/d-7084046/nasib-pioli-akan-ditentukan-hasil-newcastle-vs-milan
+https://sport.detik.com/sepakbola/liga-inggris/d-7084045/everton-selalu-ditekan-tapi-menang-kemudian
+https://sport.detik.com/sepakbola/liga-inggris/d-7084043/son-belajar-eksekusi-penalti-dari-harry-kane
+https://sport.detik.com/fotosport/d-7084297/foto-bni-sirnas-premier-ajang-persaingan-para-jawara
+https://sport.detik.com/sepakbola/liga-spanyol/d-7084042/de-jong-barcelona-tidak-krisis
+https://sport.detik.com/moto-gp/d-7083947/marc-marquez-ungkap-alasan-sering-jatuh-dengan-honda
+https://sport.detik.com/sepakbola/liga-inggris/d-7084039/manajer-everton-semprot-pochettino-yang-sebut-chelsea-main-lebih-baik
+https://sport.detik.com/sepakbola/liga-indonesia/d-7084153/keppres-naturalisasi-sudah-keluar-jay-dan-nathan-ditunggu-ambil-sumpah
+https://sport.detik.com/sepakbola/liga-inggris/d-7084037/aston-villa-di-papan-atas-liga-inggris-viral-lagi-komentar-sir-alex
+https://sport.detik.com/basket/d-7084034/dewa-united-banten-pasang-target-juara-ibl-2024
+https://sport.detik.com/sepakbola/liga-inggris/d-7083945/reece-james-cedera-lagi-cedera-lagi
+https://sport.detik.com/sepakbola/liga-indonesia/d-7083944/pengakuan-ragnar-oratmangoen-mau-dinaturalisasi-timnas-indonesia
+https://sport.detik.com/sepakbola/uefa/d-7083943/mu-vs-bayern-duel-2-tim-yang-sama-sama-lagi-terluka
+https://sport.detik.com/sepakbola/liga-spanyol/d-7083744/girona-dan-para-pemain-buangan
+https://sport.detik.com/sepakbola/liga-inggris/d-7083741/menderitalah-manchester-city
+https://sport.detik.com/raket/d-7083850/sengit-surya-revandra-kalahkan-davin-ozora-di-bni-sirnas-premier
+https://sport.detik.com/sepakbola/liga-inggris/d-7083739/gary-neville-memecat-erik-ten-hag-bukan-solusi-atasi-krisis-mu
+https://sport.detik.com/sepakbola/liga-spanyol/d-7083608/girona-ditantang-jadi-leicester-nya-laliga
+https://sport.detik.com/moto-gp/d-7083611/marc-marquez-kepergianku-dari-honda-jadi-win-win-situation
+https://sport.detik.com/sepakbola/uefa/d-7083605/5-data-fakta-man-united-vs-bayern-setan-merah-di-ujung-tanduk
+https://sport.detik.com/sepakbola/liga-spanyol/d-7083602/ada-fans-meninggal-di-tribune-laga-liga-spanyol-ini-dihentikan
+https://sport.detik.com/sepakbola/liga-spanyol/d-7083463/barcelona-mau-pertahankan-duo-joao
+https://sport.detik.com/raket/d-7083542/pelatih-pastikan-ginting-dan-jojo-prima-jelang-bwf-world-tour-finals-2023
+https://sport.detik.com/sepakbola/liga-inggris/d-7083461/pochettino-kenyataannya-chelsea-tim-papan-tengah
+https://sport.detik.com/sepakbola/foto-sepakbola/d-7083454/di-inggris-ada-aston-villa-di-spanyol-ada-girona
+https://sport.detik.com/raket/d-7083419/michael-owen-velisha-ke-16-besar-bni-sirnas-premier-usai-duel-3-gim
+https://sport.detik.com/sepakbola/liga-inggris/d-7083283/diejek-kiper-tottenham-callum-wilson-kesal
 https://www.detik.com/tag/bni-sirnas-2023
-https://sport.detik.com/sepakbola/liga-indonesia/d-7072296/bhayangkara-fc-kontrak-radja-nainggolan-rp-5-miliar
-https://sport.detik.com/sepakbola/liga-spanyol/d-7072298/alasan-joao-felix-tak-sungkan-rayakan-gol-ke-gawang-atletico-madrid
-https://sport.detik.com/sepakbola/liga-indonesia/d-7072185/bhayangkara-fc-resmi-perkenalkan-radja-nainggolan
-https://sport.detik.com/sepakbola/liga-inggris/d-7071836/man-city-melambat-guardiola-bukan-karena-apes
-https://sport.detik.com/sepakbola/liga-inggris/d-7071730/paul-scholes-sebut-mu-kini-tim-sampah-banyak-pemain-malas
+https://sport.detik.com/sepakbola/uefa/d-7084575/mu-vs-bayern-sebuah-mission-impossible-buat-setan-merah
+https://sport.detik.com/sepakbola/liga-italia/d-7084556/inzaghi-ingin-tiru-jejak-guardiola-dan-klopp
+https://sport.detik.com/sepakbola/liga-inggris/d-7084557/mctominay-skuad-mu-dukung-ten-hag-karena-enggak-toxic
+https://sport.detik.com/sepakbola/uefa/d-7084574/inter-milan-vs-sociedad-peluang-besar-nerazzurri-juara-grup
+https://sport.detik.com/sepakbola/bola-dunia/d-7084569/al-shabab-vs-al-nassr-menang-5-2-ronaldo-cs-ke-semifinal-piala-raja
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita dari kategori https://travel.detik.com/:
-https://travel.detik.com/travel-news/d-7070751/apgi-belasan-pendaki-tewas-imbas-erupsi-gunung-marapi
-https://travel.detik.com/travel-news/d-7070908/tipe-letusan-gunung-marapi-kali-ini-mematikan
-https://travel.detik.com/travel-news/d-7070286/jangan-mati-dulu-sebelum-ke-bromo
-https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
-https://travel.detik.com/travel-news/d-7069698/calo-tiket-konser-bak-kutu-busuk-sulit-diberantas-butuh-langkah-tegas
-https://travel.detik.com/travel-news/d-7072175/demi-tutupi-usia-asli-dari-pacar-cewek-china-nekat-palsukan-paspor
-https://travel.detik.com/travel-news/d-7066866/kamerun-dihapus-dari-daftar-calling-visa-imigrasi-ri-kenapa
-https://travel.detik.com/travel-news/d-7065760/panda-gemoi-makan-di-meja-malah-dianggap-panda-palsu
+https://travel.detik.com/fototravel/d-7083155/landmark-ikonik-hollywood-rayakan-100-tahun
+https://travel.detik.com/fototravel/d-7083209/potret-kupu-kupu-raja-migrasi-ke-meksiko-demi-hindari-dingin
+https://travel.detik.com/cerita-perjalanan/d-7083785/melihat-atapnya-pulau-sumatera-bukan-marapi-tapi-gunung-kerinci
+https://travel.detik.com/travel-news/d-7081194/kisah-mengmleng-kesenian-bernuansa-mistis-dari-ciamis
+https://travel.detik.com/travel-news/d-7081203/kisah-2-bule-swedia-gowes-sepeda-18-negara-demi-misi-mulia-mampir-ke-jogja
+https://travel.detik.com/travel-news/d-7084625/tarian-penolak-bala-begini-prosesi-pementasan-tari-sanghyang-dedari
+https://travel.detik.com/travel-news/d-7084498/sambut-pemburu-konten-dan-pasukan-healing-saat-nataru-bromo-pasang-kuda-kuda
+https://travel.detik.com/travel-news/d-7083749/hidup-lagi-capek-capeknya-malah-lihat-patung-mola-mola-mirip-ikan-buntal
+https://travel.detik.com/highlight/6930/oleh-oleh-jakarta
 https://travel.detik.com/highlight/6921/wisata-gadis-kretek
-https://travel.detik.com/highlight/6919/taman-ujung-seindah-itu
-https://travel.detik.com/highlight/6910/samsara-living-museum
-https://travel.detik.com/travel-news/d-7072016/dahsyatnya-letusan-gunung-marapi-dan-belasan-korban-disorot-media-asing
-https://travel.detik.com/travel-news/d-7072170/erupsi-gunung-marapi-telan-11-korban-jiwa-menparekraf-utamakan-bantuan
-https://travel.detik.com/domestic-destination/d-7070628/muntilan-dijuluki-betlehem-van-java-museum-ini-simpan-sejarahnya
-https://20.detik.com/detikupdate/20231204-231204139/-tinjau-dampak-erupsi-kemenparekraf-bakal-ke-sumbar-minggu-ini
-https://travel.detik.com/travel-news/d-7069698/calo-tiket-konser-bak-kutu-busuk-sulit-diberantas-butuh-langkah-tegas
-https://travel.detik.com/domestic-destination/d-7071840/serial-gadis-kretek-ternyata-syuting-di-rumah-bersejarah-ini
-https://travel.detik.com/travel-news/d-7072022/hampir-1-000-penerbangan-ryanair-dibatalkan-karena-perang-israel-hamas
-https://travel.detik.com/domestic-destination/d-7071930/12-ide-wisata-anti-mainstream-sekitar-jakarta
-https://travel.detik.com/cerita-perjalanan/d-7071774/satu-lagi-hidden-gem-di-bogor-wisata-alam-sereuh-hejo
-https://travel.detik.com/travel-news/d-7071546/gara-gara-film-85-turis-china-takut-liburan-ke-asean
-https://20.detik.com/detikupdate/20231204-231204118/parade-natal-tandai-100-tahun-disney-di-chili
-https://travel.detik.com/fototravel/d-7071372/serunya-rekreasi-sambil-belajar-di-wisata-kerajinan-batik-jambi
-https://travel.detik.com/domestic-destination/d-7071541/sejarah-stasiun-manggarai-dan-6-fakta-menariknya-punya-18-jalur-aktif
-https://travel.detik.com/travel-news/d-7071688/ini-perbedaan-gunung-marapi-dan-merapi-dari-lokasi-hingga-ketinggian
-https://travel.detik.com/travel-news/d-7071538/erupsi-gunung-marapi-warga-diimbau-pakai-masker-dan-waspada-ispa
-https://travel.detik.com/fototravel/d-7071148/menikmati-lanskap-bromo-taman-nasional-terindah-ketiga-di-dunia
-https://travel.detik.com/domestic-destination/d-7071349/situs-watu-gilang-yang-bikin-penasaran-ada-banyak-ukiran
-https://travel.detik.com/domestic-destination/d-7071253/main-ke-jakarta-escape-paling-asyik-akhir-pekan
-https://travel.detik.com/domestic-destination/d-7070974/yang-hijau-hijau-dari-kulon-progo-kebun-teh-nglinggo
-https://travel.detik.com/travel-news/d-7071243/american-airlines-dituntut-karena-rekam-penumpang-di-toilet
-https://travel.detik.com/travel-news/d-7070615/kisah-burung-perkutut-yang-konon-jelmaan-pangeran-pajajaran
-https://travel.detik.com/travel-news/d-7071057/fakta-gunung-marapi-gunung-api-aktif-di-minangkabau
-https://travel.detik.com/travel-news/d-7070908/tipe-letusan-gunung-marapi-kali-ini-mematikan
-https://travel.detik.com/travel-news/d-7070858/tiada-tempat-berlindung-di-area-puncak-gunung-marapi
-https://travel.detik.com/travel-news/d-7070823/11-pendaki-tewas-di-gunung-marapi-49-orang-berhasil-dievakuasi
-https://travel.detik.com/travel-news/d-7070751/apgi-belasan-pendaki-tewas-imbas-erupsi-gunung-marapi
-https://travel.detik.com/travel-news/d-7070569/mengenal-tradisi-tumpe-ajang-persaudaraan-masyarakat-banggai
-https://travel.detik.com/travel-news/d-7070531/pendaki-cewek-ngamuk-jaket-waterproofnya-basah-eh-langsung-diganti-baru
-https://travel.detik.com/travel-news/d-7070496/gunung-marapi-erupsi-jalur-pendakian-ditutup
-https://travel.detik.com/fototravel/d-7070128/serunya-naik-kano-susuri-sungai-di-taman-nasional-bantimurung-bulusaraung
-https://travel.detik.com/travel-news/d-7070487/memotret-panorama-pantjoran-pik-bersama-jelajah-lensa-jakarta
+https://travel.detik.com/highlight/3672/muslim-traveler
+https://travel.detik.com/travel-news/d-7083592/paspornya-ketinggalan-di-negara-orang-silvia-terjebak-di-negeri-sendiri
+https://travel.detik.com/travel-news/d-7084613/jadwal-cuti-bersama-natal-bisa-libur-4-hari-beruntun
+https://travel.detik.com/travel-news/d-7082852/barbershop-malaysia-tipu-turis-pemerintah-ngamuk-ancam-denda-rp-16-juta
+https://travel.detik.com/fototravel/d-7083955/potret-nenek-79-tahun-yang-keliling-dunia-kunjungi-193-negara
+https://travel.detik.com/travel-news/d-7082727/masjid-tertua-di-gaza-rusak-parah-diserang-israel
+https://travel.detik.com/travel-news/d-7084498/sambut-pemburu-konten-dan-pasukan-healing-saat-nataru-bromo-pasang-kuda-kuda
+https://travel.detik.com/fototravel/d-7084534/potret-toko-roti-kuno-saksi-sejarah-perbudakan-di-pompeii
+https://travel.detik.com/travel-news/d-7084541/muncul-covid-di-singapura-sandiaga-imbau-wni-liburan-di-indonesia-saja
+https://travel.detik.com/travel-news/d-7084532/dikecam-dunia-relokasi-warga-dari-angkor-wat-jalan-terus
+https://travel.detik.com/fototravel/d-7084477/memandang-laut-dari-ketinggian-di-bukit-asah-cantiknya-kelewatan
+https://travel.detik.com/travel-news/d-7084490/betulkah-kebakaran-bromo-jadi-berkah-rumput-hijau-sejauh-mata-memandang
+https://travel.detik.com/fototravel/d-7083976/suhu-kota-terdingin-di-dunia-tembus-58-derajat-sedingin-apa
+https://travel.detik.com/travel-news/d-7084340/imbauan-sandiaga-uno-untuk-traveler-sebelum-libur-nataru-catat-ya
+https://20.detik.com/detikupdate/20231211-231211140/respons-sandiaga-uno-soal-kenaikan-kasus-covid-19-jelang-libur-nataru
+https://travel.detik.com/travel-news/d-7084438/wisata-jelajah-purba-mengenal-situs-megalitikum-yang-ada-di-jember
+https://travel.detik.com/travel-news/d-7083745/biasa-diajak-foto-fiersa-besari-disuruh-fotoin-emak-emak-di-bandara
+https://travel.detik.com/fototravel/d-7083483/meriah-sekali-dekorasi-natal-yang-hiasi-gedung-putih
+https://travel.detik.com/travel-news/d-7084053/kisah-sedih-adan-pahlawan-yang-selamatkan-pendaki-gunung-marapi
+https://travel.detik.com/fototravel/d-7083420/potret-beijing-berselimut-salju
+https://travel.detik.com/travel-news/d-7084017/hai-duren-lover-durian-di-banjarnegara-lagi-murah-murahnya-cuma-goceng
+https://travel.detik.com/travel-news/d-7083998/rencana-sandiaga-gaet-radja-nainggolan-promosikan-wisata
+https://travel.detik.com/fototravel/d-7083209/potret-kupu-kupu-raja-migrasi-ke-meksiko-demi-hindari-dingin
+https://travel.detik.com/travel-news/d-7083888/cincin-rp-12-miliar-tamu-hotel-diduga-dicuri-eh-ternyata
+https://travel.detik.com/cerita-perjalanan/d-7083785/melihat-atapnya-pulau-sumatera-bukan-marapi-tapi-gunung-kerinci
+https://travel.detik.com/travel-news/d-7083749/hidup-lagi-capek-capeknya-malah-lihat-patung-mola-mola-mirip-ikan-buntal
+https://travel.detik.com/fototravel/d-7083155/landmark-ikonik-hollywood-rayakan-100-tahun
+https://travel.detik.com/domestic-destination/d-7083681/pertama-di-dunia-drive-thru-park-ada-di-kota-batu
+https://travel.detik.com/travel-news/d-7083384/nonton-stand-up-comedy-sambil-kemping-bisa-di-borobudur
+https://travel.detik.com/fototravel/d-7083027/penampakan-kue-raksasa-1-9-ton-di-pasar-natal-tertua-jerman
+https://travel.detik.com/travel-news/d-7083404/jangan-lakukan-kesalahan-ini-saat-liburan-ke-taiwan
+https://travel.detik.com/travel-news/d-7083357/keren-nenek-79-tahun-tuntaskan-keliling-dunia-total-193-negara
+https://www.detik.com/tag/gunung-marapi
+https://www.detik.com/tag/gunung-bromo
+https://www.detik.com/tag/pulau-payung
+https://www.detik.com/tag/gadis-kretek
 https://www.detik.com/tag/wisata-jakarta
-https://www.detik.com/tag/wisata-bogor
-https://www.detik.com/tag/desa-wisata
-https://www.detik.com/tag/kota-hantu
-https://www.detik.com/tag/harta-karun
-https://travel.detik.com/travel-news/d-7072016/dahsyatnya-letusan-gunung-marapi-dan-belasan-korban-disorot-media-asing
-https://travel.detik.com/travel-news/d-7072175/demi-tutupi-usia-asli-dari-pacar-cewek-china-nekat-palsukan-paspor
-https://travel.detik.com/travel-news/d-7072170/erupsi-gunung-marapi-telan-11-korban-jiwa-menparekraf-utamakan-bantuan
-https://travel.detik.com/domestic-destination/d-7071840/serial-gadis-kretek-ternyata-syuting-di-rumah-bersejarah-ini
-https://travel.detik.com/travel-news/d-7071546/gara-gara-film-85-turis-china-takut-liburan-ke-asean
-https://travel.detik.com/travel-news/d-7066768/pendaki-ngamuk-jaket-anti-airnya-basah-kuyup-balasan-apparel-tak-disangka
-https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
-https://travel.detik.com/travel-news/d-7063700/lecehkan-wisatawan-bawah-umur-di-malioboro-pemuda-digebuki-warga
+https://travel.detik.com/travel-news/d-7084613/jadwal-cuti-bersama-natal-bisa-libur-4-hari-beruntun
+https://travel.detik.com/travel-news/d-7084490/betulkah-kebakaran-bromo-jadi-berkah-rumput-hijau-sejauh-mata-memandang
+https://travel.detik.com/travel-news/d-7084532/dikecam-dunia-relokasi-warga-dari-angkor-wat-jalan-terus
+https://travel.detik.com/fototravel/d-7083955/potret-nenek-79-tahun-yang-keliling-dunia-kunjungi-193-negara
+https://travel.detik.com/fototravel/d-7084534/potret-toko-roti-kuno-saksi-sejarah-perbudakan-di-pompeii
+https://travel.detik.com/travel-news/d-7079366/turis-bikin-tato-bahasa-arab-dikira-keren-eh-artinya-bikin-ngakak
+https://travel.detik.com/travel-news/d-7078226/bercanda-bom-di-pesawat-warga-bogor-terancam-penjara-1-tahun
+https://travel.detik.com/travel-news/d-7076342/bisa-bisanya-alat-peringatan-dini-gunung-marapi-dicuri
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Berita dari kategori https://food.detik.com/:
-https://food.detik.com/info-kuliner/d-7069699/pria-ini-gagal-menangkan-tantangan-makan-meski-sudah-makan-4-500-kalori
-https://food.detik.com/info-kuliner/d-7069071/haru-pengantar-makanan-ini-berhasil-selamatkan-nyawa-pelanggannya
-https://food.detik.com/info-kuliner/d-7067855/stok-telur-dalam-keadaan-beku-netizen-ini-tuai-kritik-pedas
-https://food.detik.com/info-kuliner/d-7068587/codeblu-angkat-bicara-soal-masterchef-indonesia-ini-komentarnya
-https://food.detik.com/info-kuliner/d-7065281/bikin-rugi-pengunjung-ini-sengaja-tempel-qris-miliknya-di-restoran
-https://food.detik.com/foto-kuliner/d-7071852/senang-masak-jin-bts-coba-bikin-arak-dan-sajikan-daging-babi
-https://food.detik.com/foto-kuliner/d-7071949/dida-sinclair-mertua-idaman-yang-hobi-berkebun-dan-memasak
-https://food.detik.com/info-kuliner/d-7071198/kafe-maid-ini-beri-pelayanan-kasar-pada-pengunjung-ditampar-dan-diguyur-minuman
-https://food.detik.com/cooking-event/d-7070857/sania-baking-class-5-resep-kue-spesial-tahun-baru-bonus-mikser-dan-loyang-gratis
-https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-yang-kini-jadi-cagar-budaya
-https://food.detik.com/info-kuliner/d-7071562/pengunjung-kaget-restoran-menipunya-dengan-lakukan-trik-ini
-https://food.detik.com/foto-kuliner/d-7071174/cafe-batavia-kafe-jaman-belanda-yang-jadi-cagar-budaya
-https://food.detik.com/info-kuliner/d-7071191/kocak-driver-ojol-ini-pakai-kostum-pikachu-untuk-antar-makanan
-https://food.detik.com/resto-dan-kafe/d-7071554/loaf-bun-legitnya-goguma-ppang-dan-roti-jagung-di-bakery-korea-hits
-https://food.detik.com/info-kuliner/d-7071159/rugi-bandar-toko-buah-ini-kecurian-18-kotak-durian
-https://food.detik.com/info-kuliner/d-7071334/duh-penemuan-tikus-di-dapur-rumah-sakit-ini-bikin-ngeri
-https://food.detik.com/info-kuliner/d-7071444/4-driver-ojol-ini-ditraktir-bule-di-bali-cicip-tacos-hingga-makanan-lebanon
-https://food.detik.com/berita-boga/d-7071063/martabak-manis-dari-fujian-jadi-menu-makan-malam-pekerja-tambang-timah
-https://food.detik.com/foto-kuliner/d-7070798/gurih-renyah-tempe-mendoan-rp-2-000-ada-di-20-tempat-ini
-https://food.detik.com/info-kuliner/d-7070850/bcl-dan-tiko-sajikan-menu-tradisional-bali-di-pesta-penikahan
-https://food.detik.com/berita-boga/d-7070775/laris-manis-tipat-cantok-mie-warung-dot-raih-omzet-rp-50-juta-sebulan
-https://food.detik.com/foto-kuliner/d-7069793/kenyal-garing-bakso-gepeng-bewok-yang-viral-di-gading-serpong
-https://food.detik.com/info-kuliner/d-7070770/5-restoran-ini-tawarkan-bebek-peking-dengan-nasi-hainan-dan-bakmi
-https://food.detik.com/berita-boga/d-7070326/30-tahun-beroperasi-cafe-batavia-dijadikan-cagar-budaya-dki-jakarta
-https://food.detik.com/sayur/d-7069311/resep-oseng-petai-dan-bawang-bombay-yang-renyah-pedas-untuk-lauk-nasi
-https://food.detik.com/info-kuliner/d-7069789/seperti-menu-di-restoran-5-makanan-rumah-sakit-ini-bikin-ngiler
-https://food.detik.com/sayur/d-7069275/resep-tumis-bayam-dan-teri-lauk-sederhana-yang-segar-dan-gurih
-https://food.detik.com/berita-boga/d-7070491/pengantar-makanan-selamatkan-nyawa-pelanggan-hingga-pria-gagal-menangkan-tantangan-makan
-https://food.detik.com/sup-dan-salad/d-7069338/3-resep-soto-khas-sumatera-berbumbu-rempah-untuk-penghangat-badan
-https://food.detik.com/foto-kuliner/d-7068206/rela-antre-panjang-demi-chicken-steak-buatan-mantan-pramugari
-https://food.detik.com/info-kuliner/d-7070423/anti-mainstream-wanita-ini-dapat-hantaran-makanan-di-hari-wisudanya
-https://food.detik.com/info-kuliner/d-7069713/5-kopitiam-ini-punya-paket-sarapan-klasik-kopi-o-hingga-kaya-toast
-https://food.detik.com/info-kuliner/d-7069785/gurih-medhok-hucap-khas-kuningan-yang-sederhana-dan-legendaris
-https://food.detik.com/info-kuliner/d-7069783/ketahui-5-jenis-kopi-hitam-yang-nikmat-dan-aromanya-khas
-https://food.detik.com/info-sehat/d-7069791/nasi-nol-kalori-populer-untuk-turunkan-bb-apakah-aman-dikonsumsi
-https://food.detik.com/foto-kuliner/d-7070204/momen-kulineran-marshel-widianto-bareng-rekan-artis
-https://food.detik.com/foto-kuliner/d-7070145/keseruan-sandra-dewi-saat-ngopi-di-melbourne-dan-makan-di-restoran-mewah
-https://food.detik.com/info-kuliner/d-7069699/pria-ini-gagal-menangkan-tantangan-makan-meski-sudah-makan-4-500-kalori
-https://food.detik.com/info-kuliner/d-7069033/5-restoran-ini-terpaksa-tutup-gegara-dapurnya-kotor-ada-tikus-hingga-kecoak
-https://20.detik.com/detikupdate/20231203-231203080/pelestarian-kuliner-bulung-di-serangan-festival-2023
-https://food.detik.com/info-kuliner/d-7069046/rekomendasi-5-kopitiam-modern-di-jakarta-yang-cocok-untuk-hangout
-https://food.detik.com/info-kuliner/d-7069652/apes-pria-ini-muntah-muntah-usai-temukan-kecoak-dalam-ramennya
-https://food.detik.com/info-kuliner/d-7069067/pecahkan-rekor-dunia-dua-pria-ini-pergi-ke-99-bar-dalam-sehari
-https://food.detik.com/info-kuliner/d-7069064/5-kopitiam-kekinian-di-bogor-yang-ramai-disambangi-untuk-hangout
-https://food.detik.com/info-kuliner/d-7069028/beli-pisang-goreng-rp-6-ribuan-pelanggan-kaget-bentuknya-mirip-ikan-bilis
-https://food.detik.com/pengalaman-bersantap/d-7069418/murah-meriah-ada-kopi-o-dan-nasi-lemak-ala-medan-di-kopitiam-ini
-https://food.detik.com/info-kuliner/d-7069071/haru-pengantar-makanan-ini-berhasil-selamatkan-nyawa-pelanggannya
-https://food.detik.com/mie-dan-pasta/d-7068047/resep-spaghetti-tumis-seafood-dan-cabe-yang-pedas-menyengat-untuk-makan-malam
-https://food.detik.com/info-kuliner/d-7069163/5-kuliner-menarik-di-fresh-market-bintaro-buat-jajan-akhir-pekan
-https://food.detik.com/mie-dan-pasta/d-7067918/3-resep-mie-ayam-populer-yang-gurih-enak-dimakan-bareng-keluarga
-https://food.detik.com/foto-kuliner/d-7069035/gede-banget-ada-bakso-rusuk-jumbo-di-warung-andalan-nex-carlos
-https://food.detik.com/info-kuliner/d-7069161/selain-pakai-sumpit-telur-tornado-bisa-dibikin-dengan-cara-ini
-https://food.detik.com/info-kuliner/d-7069022/cappuccino-kering-tidak-seperti-yang-dibayangkan-ini-racikan-aslinya
-https://food.detik.com/info-sehat/d-7069000/berapa-jumlah-kalori-satu-piring-nasi-putih-ini-penjelasannya
-https://food.detik.com/info-kuliner/d-7068999/7-cara-praktis-dan-mudah-atasi-kulkas-yang-tidak-dingin
-https://food.detik.com/info-sehat/d-7068980/7-sayuran-terbaik-untuk-kontrol-gula-darah-penderta-diabetes
+https://food.detik.com/info-kuliner/d-7083256/legendaris-5-snack-hingga-biskuit-ini-usianya-sudah-ratusan-tahun
+https://food.detik.com/info-kuliner/d-7083342/parah-pelayan-hina-keluarga-pelanggan-lewat-catatan-bon
+https://food.detik.com/info-kuliner/d-7080936/wanita-ini-sarapan-nasi-pakai-durian-netizen-sebut-sakit-jiwa
+https://food.detik.com/info-kuliner/d-7081360/mark-wiens-ke-indonesia-lagi-puas-kulineran-di-surabaya
+https://food.detik.com/info-kuliner/d-7079669/5-seafood-ukuran-jumbo-ini-ada-yang-beratnya-mencapai-453-kg
+https://food.detik.com/info-kuliner/d-7083773/baru-mcdonalds-buka-cosmcs-gerai-minuman-bergaya-retro
+https://food.detik.com/info-kuliner/d-7005497/vera-wang-awet-muda-di-usia-74-tahun-ternyata-doyan-junk-food
+https://food.detik.com/info-kuliner/d-6979346/viral-menu-mcdonalds-tahun-80-an-sukses-bikin-nostalgia
+https://food.detik.com/info-kuliner/d-7083921/latte-vs-mocha-mana-yang-kalori-dan-kafeinnya-lebih-banyak
+https://food.detik.com/nasi/d-7082847/resep-nasi-goreng-putih-dan-sayuran-cocok-buat-yang-tak-makan-daging
+https://food.detik.com/info-sehat/d-7083925/10-manfaat-mengonsumsi-jamur-kuping-yang-jarang-diketahui
+https://food.detik.com/info-sehat/d-7083923/5-makanan-untuk-paru-paru-sehat-dan-kuat-bagus-dikonsumsi-rutin
+https://food.detik.com/foto-kuliner/d-7084358/betharia-sonata-ibunda-leon-dozan-yang-suka-kulineran-di-luar-negeri
+https://food.detik.com/foto-kuliner/d-7083894/v-bts-resmi-wamil-sebelumnya-pamer-momen-kulineran-seru
+https://food.detik.com/info-kuliner/d-7083854/baru-jualan-pastry-wanita-ini-sudah-rugi-rp-3-juta-gegara-stand-roboh
+https://food.detik.com/info-kuliner/d-7083831/kocak-ibu-ini-bawakan-kecap-untuk-anaknya-pakai-suntikan
+https://food.detik.com/info-kuliner/d-7083663/cicip-durian-di-malaysia-aktris-china-fan-bingbing-ngaku-jatuh-cinta
+https://food.detik.com/info-kuliner/d-7083757/makan-di-lrt-berasa-piknik-pria-ini-bikin-heboh
+https://food.detik.com/info-kuliner/d-7083649/harga-seblak-lebih-dari-rp-40-ribu-disebut-mahal-berapa-kisarannya
+https://food.detik.com/resto-dan-kafe/d-7083642/nefis-kebab-house-uniknya-iskender-kebab-khas-turki-dengan-butter-rice
+https://food.detik.com/info-kuliner/d-7083697/5-fakta-payakumbuah-milik-arief-muhammad-terbaru-ekspansi-ke-jepang
+https://food.detik.com/info-kuliner/d-7083676/5-restoran-ini-disebut-paling-kontroversial-kenapa-ya
+https://20.detik.com/detikupdate/20231211-231211092/makan-durian-cuma-rp-5-ribu-di-pasar-tiban-banjarnegara
+https://food.detik.com/info-kuliner/d-7083342/parah-pelayan-hina-keluarga-pelanggan-lewat-catatan-bon
+https://food.detik.com/berita-boga/d-7083364/pesona-penjual-es-tebu-di-mojokerto-bikin-dagangannya-laris-manis
+https://20.detik.com/detikupdate/20231211-231211085/nyobain-bakso-malang-tanboy-kun-banyak-pilihan-gorengan-topping
+https://food.detik.com/foto-kuliner/d-7082957/slurrp-20-wedang-ronde-rp-10-000an-ada-di-sini
+https://food.detik.com/info-kuliner/d-7083256/legendaris-5-snack-hingga-biskuit-ini-usianya-sudah-ratusan-tahun
+https://food.detik.com/info-kuliner/d-7083087/mie-lethek-khas-bantul-disebut-terjelek-sedunia-ini-alasannya
+https://food.detik.com/berita-boga/d-7083079/alakathak-paduan-tempe-benguk-dan-mie-kanji-unik-dari-sukoharjo
+https://food.detik.com/info-kuliner/d-7083006/mau-makan-siang-praktis-ada-pasta-cup-enak-di-5-tempat-ini
+https://food.detik.com/info-kuliner/d-7082439/gemas-reynold-poernomo-masak-bareng-keponakan-ini-menunya
+https://food.detik.com/kue/d-7082274/resep-mini-pie-nastar-almond-renyah-legit-cocok-buat-suguhan-tamu
+https://food.detik.com/berita-boga/d-7082318/aneka-bakso-seafood-rp-6-ribuan-di-transmart-diskon-tiap-hari-20
+https://food.detik.com/foto-kuliner/d-7081246/keren-toko-permen-dan-kue-berusia-42-tahun-ini-masih-eksis
+https://food.detik.com/berita-boga/d-7082314/manis-juicy-semangka-merah-diskon-20-di-transmart-diskon-tiap-hari
+https://food.detik.com/berita-boga/d-7082630/mark-wiens-kulineran-di-surabaya-hingga-trik-cuan-ojol-makanan
+https://food.detik.com/berita-boga/d-7082312/hemat-beli-anggur-muscat-hanya-di-transmart-diskon-tiap-hari
+https://food.detik.com/berita-boga/d-7082304/buruan-serbu-beli-ikan-shisamo-hemat-20-di-transmart-diskon-tiap-hari
+https://food.detik.com/berita-boga/d-7082295/transmart-diskon-tiap-hari-20-daging-shabu-harganya-cuan
+https://food.detik.com/tahu-dan-tempe/d-7082258/3-resep-sup-tofu-yang-berkaldu-bening-menyegarkan-dan-kaya-nutrisi
+https://food.detik.com/info-sehat/d-7081717/5-khasiat-kopi-untuk-kulit-membuat-awet-muda-dan-kencang
+https://food.detik.com/berita-boga/d-7082438/manis-legit-durian-mini-dari-lereng-gunung-semeru
+https://food.detik.com/info-sehat/d-7082429/mengunyah-makanan-pelan-pelan-bisa-turunkan-berat-badan-ini-faktanya
+https://food.detik.com/info-sehat/d-7082418/catat-7-rempah-yang-ampuh-turunkan-kolesterol-secara-alami
+https://food.detik.com/foto-kuliner/d-7082156/adiba-khanza-putri-mendiang-uje-yang-hobi-ngopi-di-kafe
+https://food.detik.com/foto-kuliner/d-7082363/gaya-ivan-gunawan-desainer-baju-pengantin-adiba-khanza-saat-makan-di-restoran
+https://food.detik.com/info-kuliner/d-7081300/christian-bautista-ke-indonesia-review-kerupuk-gendar-hingga-kerupuk-keriting
+https://food.detik.com/foto-kuliner/d-7081693/seru-dan-penuh-kejutan-bikin-kue-natal-bersama-chef-yongki-gunawan
+https://food.detik.com/berita-boga/d-7081243/chef-yongki-sukses-ungkap-5-resep-kue-natal-yang-spesial
+https://food.detik.com/berita-boga/d-7081487/bosan-nastar-ini-pie-nastar-almond-ala-chef-yongki
+https://food.detik.com/berita-boga/d-7081241/cocok-buat-natal-ini-tips-bikin-nastar-petit-four-roll-cake
+https://20.detik.com/detikupdate/20231210-231210067/beda-sajian-hot-pot-shabu-shabu-le-ta-su-dengan-yang-lain
+https://food.detik.com/berita-boga/d-7081721/haidilao-punya-pelayanan-terbaik-sediakan-camilan-gratis-hingga-salon-kuku
+https://food.detik.com/info-kuliner/d-7081569/5-kisah-sukses-driver-ojol-yang-punya-trik-untuk-dapat-pemasukan-lebih
+https://food.detik.com/info-kuliner/d-7080936/wanita-ini-sarapan-nasi-pakai-durian-netizen-sebut-sakit-jiwa
+https://food.detik.com/resto-dan-kafe/d-7081517/letasu-puas-santap-shabu-shabu-ala-tokyo-di-resto-ayce
+https://food.detik.com/info-sehat/d-7080934/rekomendasi-15-menu-diet-yang-sehat-dan-bernutrisi-ada-telur-hingga-ikan
 https://www.detik.com/tag/50-resep-dan-tips-olahan-daging-kurban
-https://food.detik.com/foto-kuliner/d-7071949/dida-sinclair-mertua-idaman-yang-hobi-berkebun-dan-memasak
-https://food.detik.com/info-kuliner/d-7071198/kafe-maid-ini-beri-pelayanan-kasar-pada-pengunjung-ditampar-dan-diguyur-minuman
-https://food.detik.com/foto-kuliner/d-7071852/senang-masak-jin-bts-coba-bikin-arak-dan-sajikan-daging-babi
-https://food.detik.com/info-kuliner/d-7071562/pengunjung-kaget-restoran-menipunya-dengan-lakukan-trik-ini
-https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-yang-kini-jadi-cagar-budaya
+https://food.detik.com/info-sehat/d-7083923/5-makanan-untuk-paru-paru-sehat-dan-kuat-bagus-dikonsumsi-rutin
+https://food.detik.com/info-kuliner/d-7083921/latte-vs-mocha-mana-yang-kalori-dan-kafeinnya-lebih-banyak
+https://food.detik.com/nasi/d-7082847/resep-nasi-goreng-putih-dan-sayuran-cocok-buat-yang-tak-makan-daging
+https://food.detik.com/info-sehat/d-7083925/10-manfaat-mengonsumsi-jamur-kuping-yang-jarang-diketahui
+https://food.detik.com/foto-kuliner/d-7084358/betharia-sonata-ibunda-leon-dozan-yang-suka-kulineran-di-luar-negeri
 </pre></div>
 </div>
 </div>
 </div>
+<p>Menyiapkan CSV</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
@@ -615,7 +620,11 @@ https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-y
     <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Nomor&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;Judul Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">])</span>
 
     <span class="c1"># Crawl berita untuk setiap kategori</span>
-    <span class="k">for</span> <span class="n">category_url</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+    <span class="c1">#for category_url in categories:</span>
+        <span class="c1">#news_links = crawl_detik_news(category_url)</span>
+
+        <span class="c1"># Crawl berita untuk setiap kategori</span>
+    <span class="k">for</span> <span class="n">category_url</span><span class="p">,</span> <span class="n">category_name</span> <span class="ow">in</span> <span class="n">categories</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">news_links</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
 
         <span class="c1"># Menyimpan hasil ke dalam file CSV</span>
@@ -633,6 +642,7 @@ https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-y
 </div>
 </div>
 </div>
+<p>Menampilkan Hasil Crawling</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -685,6 +695,1480 @@ https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-y
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">def</span> <span class="nf">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">):</span>
+    <span class="c1"># Mengunduh halaman kategori</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gagal mengunduh halaman </span><span class="si">{</span><span class="n">category_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="c1"># Membuat objek BeautifulSoup</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Mencari tautan berita</span>
+    <span class="n">news_links</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">):</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+        <span class="n">news_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">news_links</span>
+
+<span class="k">def</span> <span class="nf">extract_news_content</span><span class="p">(</span><span class="n">news_url</span><span class="p">):</span>
+    <span class="c1"># Mengunduh halaman berita</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">news_url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gagal mengunduh halaman </span><span class="si">{</span><span class="n">news_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># Membuat objek BeautifulSoup</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Mengekstrak tanggal dan konten berita</span>
+    <span class="n">date_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+    <span class="n">content_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;detail_text&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Menangani kemungkinan tag yang tidak ditemukan</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">date_tag</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">date_tag</span> <span class="k">else</span> <span class="s1">&#39;N/A&#39;</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">content_tag</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">content_tag</span> <span class="k">else</span> <span class="s1">&#39;N/A&#39;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="n">news_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Date: </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Content: </span><span class="si">{</span><span class="n">content</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">date</span><span class="p">,</span> <span class="n">content</span>
+
+<span class="c1"># Kategori yang akan di-crawl</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;olahraga&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;travel&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;makanan&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyiapkan file CSV</span>
+<span class="n">csv_file_path</span> <span class="o">=</span> <span class="s1">&#39;detik.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Nomor&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;Judul Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Tanggal&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">,</span> <span class="s1">&#39;Konten&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Crawl berita untuk setiap kategori</span>
+    <span class="k">for</span> <span class="n">category_url</span><span class="p">,</span> <span class="n">category_name</span> <span class="ow">in</span> <span class="n">categories</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">news_links</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+
+        <span class="c1"># Menyimpan hasil ke dalam file CSV</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">news_links</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">date</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">extract_news_content</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+            <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">category_name</span><span class="p">,</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">date</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">content</span><span class="p">])</span>
+
+<span class="c1"># Menampilkan pesan jika penyimpanan berhasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data telah disimpan dalam file CSV: </span><span class="si">{</span><span class="n">csv_file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>URL: https://sport.detik.com/moto-gp/d-7068676/komentar-valentino-rossi-lihat-marc-marquez-gabung-ke-ducati
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sport-lain/d-7066828/cari-desak-made-baru-fpti-gelar-kejurnas-panjat-tebing
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/moto-gp/d-7065304/bagnaia-puas-dengan-motor-baru-ducati-tapi-bisa-lebih-oke-lagi
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/g-sport/d-7067249/jonatan-christie-resmi-nikahi-shanju-eks-jkt48
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/raket/d-7066950/6-wakil-indonesia-di-bwf-world-tour-finals-2023
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sport-lain/d-7072390/menembak-ikut-sumbang-emas-di-world-abilitysport-games-2023
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sport-lain/d-7071648/atlet-para-cycling-ri-raih-3-emas-di-world-abilitysport-games-2023
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sport-lain/d-6949427/asian-games-2023-menembak-sumbang-emas-pertama-bagi-indonesia
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-jerman/d-7072395/goretzka-menikmati-betul-main-dengan-kane
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072394/arteta-tak-peduli-man-city-cuma-fokus-ke-arsenal
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072393/enzo-fernandez-ditantang-bikin-gol-lebih-banyak-bisa
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7072392/alami-cedera-punggung-ter-stegen-pertimbangkan-operasi
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-italia/d-7072391/kiprah-sommer-buat-inter-tak-rindukan-onana
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/bola-dunia/d-7072397/liga-al-ittihad-vs-sepahan-the-tigers-menang-2-1-lolos-babak-berikutnya
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sport-lain/d-7072389/pajajaran-esports-bogor-juara-liga-esports-nasional-2023
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072387/protes-berlebihan-man-city-didakwa-fa
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7072371/satu-kekurangan-yang-harus-segera-diperbaiki-bellingham
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072359/dijadikan-meme-haaland-malah-tersenyum
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072340/pope-cedera-newcastle-incar-de-gea
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-italia/d-7072323/inter-milan-harus-hati-hati-dengan-juventus-ini-alasannya
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7072298/alasan-joao-felix-tak-sungkan-rayakan-gol-ke-gawang-atletico-madrid
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7072296/bhayangkara-fc-kontrak-radja-nainggolan-rp-5-miliar
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071836/man-city-melambat-guardiola-bukan-karena-apes
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7072257/persib-vs-psm-tuntas-tanpa-pemenang
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7072185/bhayangkara-fc-resmi-perkenalkan-radja-nainggolan
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071786/jorginho-ingatkan-arsenal-jangan-buru-buru-lepas-pedal
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7071785/xavi-bahagia-barcelona-punya-joao-felix
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/fotosport/d-7071789/foto-aksi-ciamik-para-pebulutangkis-muda-bni-sirnas-b-di-pekanbaru
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-italia/d-7071731/barella-juventus-lawan-sulit-karena-jago-bertahan
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071730/paul-scholes-sebut-mu-kini-tim-sampah-banyak-pemain-malas
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7071445/daftar-kerusuhan-suporter-di-liga-1-2023-2024
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/foto-sepakbola/d-7071460/meme-haaland-ngamuk
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071447/pemain-chelsea-ini-rayakan-gol-perdana-mendadak-berhenti-karena
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071383/sudah-bosan-juara-manchester-city
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-italia/d-7071717/van-de-beek-dikabarkan-menuju-juventus
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7071834/kata-jokowi-soal-ri-calonkan-diri-jadi-tuan-rumah-piala-dunia-u-20-2025
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071146/lagi-lagi-kode-emoji-david-de-gea
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sport-lain/d-7071648/atlet-para-cycling-ri-raih-3-emas-di-world-abilitysport-games-2023
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7071027/joao-felix-permanenkan-aku-barcelona
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7071733/bali-united-vs-arema-fc-serdadu-tridatu-menang-3-2
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/detiktv/d-7071713/jokowi-minta-pssi-jajaki-peluang-jadi-tuan-rumah-pildun-u-20-2025
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071140/mengapa-ten-hag-mainkan-luke-shaw-lagi-di-posisi-bek-tengah
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/raket/d-7071544/dzaky-kalahkan-khadafi-maju-ke-64-besar-bni-sirnas-b-pekanbaru
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7071141/marak-rusuh-suporter-saatnya-terapkan-sanksi-pengurangan-poin-di-liga-1
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/detiktv/d-7071561/jokowi-soal-timnas-u-17-perlu-proses-tak-bisa-instan-jadi-juara
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7071483/indonesia-siap-calonkan-diri-jadi-tuan-rumah-piala-dunia-u-20-2025
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071143/man-city-mulai-diragukan
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/raket/d-7071196/demi-medali-olimpiade-gregoria-bertekad-lebih-stabil-tahun-depan
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-indonesia/d-7071380/pssi-dan-fas-mau-duet-jadi-tuan-rumah-piala-dunia-u-20-atau-u-17
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071139/man-city-sudah-kebobolan-16-gol-tak-sesuai-harapan-ruben-dias
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071136/hampir-tiga-tahun-martial-nggak-pernah-main-90-menit-di-mu
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-italia/d-7071024/lupakan-scudetto-napoli-kini-kalah-kelas-dari-inter
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7071022/simpati-ange-postecoglou-lihat-guardiola-marah-marah
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/raket/d-7071134/gregoria-waspadai-faktor-nonteknis-di-bwf-world-tour-finals
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7070967/klopp-pun-tak-menyangka-liverpool-vs-fulham-bakal-seseru-ini
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7070962/haaland-pelototi-wasit-guardiola-saya-mau-bilang-apa
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7070960/barcelona-vs-atletico-blaugrana-nyaris-sempurna
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/raket/d-7070979/jelang-world-tour-finals-2023-bagaimana-otot-lutut-ginting
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/bni-sirnas-2023
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-italia/d-7072391/kiprah-sommer-buat-inter-tak-rindukan-onana
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072393/enzo-fernandez-ditantang-bikin-gol-lebih-banyak-bisa
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072394/arteta-tak-peduli-man-city-cuma-fokus-ke-arsenal
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-inggris/d-7072387/protes-berlebihan-man-city-didakwa-fa
+Date: N/A
+Content: N/A
+URL: https://sport.detik.com/sepakbola/liga-spanyol/d-7072392/alami-cedera-punggung-ter-stegen-pertimbangkan-operasi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070751/apgi-belasan-pendaki-tewas-imbas-erupsi-gunung-marapi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070908/tipe-letusan-gunung-marapi-kali-ini-mematikan
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070286/jangan-mati-dulu-sebelum-ke-bromo
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7069698/calo-tiket-konser-bak-kutu-busuk-sulit-diberantas-butuh-langkah-tegas
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072446/menparekraf-buka-suara-soal-boikot-israel-ada-yang-terdampak
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072170/erupsi-gunung-marapi-telan-11-korban-jiwa-menparekraf-utamakan-bantuan
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/highlight/6921/wisata-gadis-kretek
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/highlight/6919/taman-ujung-seindah-itu
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/highlight/6910/samsara-living-museum
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072016/dahsyatnya-letusan-gunung-marapi-dan-belasan-korban-disorot-media-asing
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/fototravel/d-7072447/jakarta-escape-hidden-gems-di-bekasi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7070628/muntilan-dijuluki-betlehem-van-java-museum-ini-simpan-sejarahnya
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072410/masih-ada-pendaki-terjebak-di-gunung-marapi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7069698/calo-tiket-konser-bak-kutu-busuk-sulit-diberantas-butuh-langkah-tegas
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/fototravel/d-7072412/melihat-jejak-penyebaran-agama-katolik-di-museum-misi-muntilan
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072401/awas-jangan-asal-rekam-dan-foto-di-maskapai-ini-kalau-nggak-kena-sanksi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7072164/fakta-fakta-pulau-kunti-ada-suara-tertawa-dilarang-dikunjungi-manusia
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072175/demi-tutupi-usia-asli-dari-pacar-cewek-china-nekat-palsukan-paspor
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072170/erupsi-gunung-marapi-telan-11-korban-jiwa-menparekraf-utamakan-bantuan
+Date: N/A
+Content: N/A
+URL: https://20.detik.com/detikupdate/20231204-231204139/-tinjau-dampak-erupsi-kemenparekraf-bakal-ke-sumbar-minggu-ini
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7071840/serial-gadis-kretek-ternyata-syuting-di-rumah-bersejarah-ini
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072022/hampir-1-000-penerbangan-ryanair-dibatalkan-karena-perang-israel-hamas
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7071930/12-ide-wisata-anti-mainstream-sekitar-jakarta
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/cerita-perjalanan/d-7071774/satu-lagi-hidden-gem-di-bogor-wisata-alam-sereuh-hejo
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7071546/gara-gara-film-85-turis-china-takut-liburan-ke-asean
+Date: N/A
+Content: N/A
+URL: https://20.detik.com/detikupdate/20231204-231204118/parade-natal-tandai-100-tahun-disney-di-chili
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/fototravel/d-7071372/serunya-rekreasi-sambil-belajar-di-wisata-kerajinan-batik-jambi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7071541/sejarah-stasiun-manggarai-dan-6-fakta-menariknya-punya-18-jalur-aktif
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7071688/ini-perbedaan-gunung-marapi-dan-merapi-dari-lokasi-hingga-ketinggian
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7071538/erupsi-gunung-marapi-warga-diimbau-pakai-masker-dan-waspada-ispa
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/fototravel/d-7071148/menikmati-lanskap-bromo-taman-nasional-terindah-ketiga-di-dunia
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7071349/situs-watu-gilang-yang-bikin-penasaran-ada-banyak-ukiran
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7071253/main-ke-jakarta-escape-paling-asyik-akhir-pekan
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/domestic-destination/d-7070974/yang-hijau-hijau-dari-kulon-progo-kebun-teh-nglinggo
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7071243/american-airlines-dituntut-karena-rekam-penumpang-di-toilet
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070615/kisah-burung-perkutut-yang-konon-jelmaan-pangeran-pajajaran
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7071057/fakta-gunung-marapi-gunung-api-aktif-di-minangkabau
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070908/tipe-letusan-gunung-marapi-kali-ini-mematikan
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070858/tiada-tempat-berlindung-di-area-puncak-gunung-marapi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070823/11-pendaki-tewas-di-gunung-marapi-49-orang-berhasil-dievakuasi
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/wisata-jakarta
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/wisata-bogor
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/desa-wisata
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/kota-hantu
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/harta-karun
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072401/awas-jangan-asal-rekam-dan-foto-di-maskapai-ini-kalau-nggak-kena-sanksi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072410/masih-ada-pendaki-terjebak-di-gunung-marapi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7072446/menparekraf-buka-suara-soal-boikot-israel-ada-yang-terdampak
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/fototravel/d-7072412/melihat-jejak-penyebaran-agama-katolik-di-museum-misi-muntilan
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/fototravel/d-7072447/jakarta-escape-hidden-gems-di-bekasi
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7066768/pendaki-ngamuk-jaket-anti-airnya-basah-kuyup-balasan-apparel-tak-disangka
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7070317/tolong-pak-sandi-kenapa-harga-tiket-konser-mahal-setara-umr
+Date: N/A
+Content: N/A
+URL: https://travel.detik.com/travel-news/d-7063700/lecehkan-wisatawan-bawah-umur-di-malioboro-pemuda-digebuki-warga
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071159/rugi-bandar-toko-buah-ini-kecurian-18-kotak-durian
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7070850/bcl-dan-tiko-sajikan-menu-tradisional-bali-di-pesta-penikahan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069699/pria-ini-gagal-menangkan-tantangan-makan-meski-sudah-makan-4-500-kalori
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069071/haru-pengantar-makanan-ini-berhasil-selamatkan-nyawa-pelanggannya
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7067855/stok-telur-dalam-keadaan-beku-netizen-ini-tuai-kritik-pedas
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7072294/wanita-ini-terapkan-metode-diet-90-30-50-yang-bikin-langsing
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7065236/ahli-ungkap-5-minuman-untuk-diet-cepat-turunkan-bb
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7062587/10-makanan-di-malam-hari-untuk-diet-yang-tidak-bikin-gemuk-dan-padat-gizi
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7071571/5-minuman-sehat-ini-cocok-dikonsumsi-usai-makan-gorengan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7071602/7-buah-penurun-kolesterol-tinggi-yang-enak-menyegarkan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/cooking-event/d-7070857/sania-baking-class-5-resep-kue-spesial-tahun-baru-bonus-mikser-dan-loyang-gratis
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7071852/senang-masak-jin-bts-coba-bikin-arak-dan-sajikan-daging-babi
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7071949/dida-sinclair-mertua-idaman-yang-hobi-berkebun-dan-memasak
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071198/kafe-maid-ini-beri-pelayanan-kasar-pada-pengunjung-ditampar-dan-diguyur-minuman
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-yang-kini-jadi-cagar-budaya
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071562/pengunjung-kaget-restoran-menipunya-dengan-lakukan-trik-ini
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7071174/cafe-batavia-kafe-jaman-belanda-yang-jadi-cagar-budaya
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071191/kocak-driver-ojol-ini-pakai-kostum-pikachu-untuk-antar-makanan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/resto-dan-kafe/d-7071554/loaf-bun-legitnya-goguma-ppang-dan-roti-jagung-di-bakery-korea-hits
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071159/rugi-bandar-toko-buah-ini-kecurian-18-kotak-durian
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071334/duh-penemuan-tikus-di-dapur-rumah-sakit-ini-bikin-ngeri
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7071444/4-driver-ojol-ini-ditraktir-bule-di-bali-cicip-tacos-hingga-makanan-lebanon
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/berita-boga/d-7071063/martabak-manis-dari-fujian-jadi-menu-makan-malam-pekerja-tambang-timah
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7070798/gurih-renyah-tempe-mendoan-rp-2-000-ada-di-20-tempat-ini
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7070850/bcl-dan-tiko-sajikan-menu-tradisional-bali-di-pesta-penikahan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/berita-boga/d-7070775/laris-manis-tipat-cantok-mie-warung-dot-raih-omzet-rp-50-juta-sebulan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7069793/kenyal-garing-bakso-gepeng-bewok-yang-viral-di-gading-serpong
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7070770/5-restoran-ini-tawarkan-bebek-peking-dengan-nasi-hainan-dan-bakmi
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/berita-boga/d-7070326/30-tahun-beroperasi-cafe-batavia-dijadikan-cagar-budaya-dki-jakarta
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/sayur/d-7069311/resep-oseng-petai-dan-bawang-bombay-yang-renyah-pedas-untuk-lauk-nasi
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069789/seperti-menu-di-restoran-5-makanan-rumah-sakit-ini-bikin-ngiler
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/sayur/d-7069275/resep-tumis-bayam-dan-teri-lauk-sederhana-yang-segar-dan-gurih
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/berita-boga/d-7070491/pengantar-makanan-selamatkan-nyawa-pelanggan-hingga-pria-gagal-menangkan-tantangan-makan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/sup-dan-salad/d-7069338/3-resep-soto-khas-sumatera-berbumbu-rempah-untuk-penghangat-badan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7068206/rela-antre-panjang-demi-chicken-steak-buatan-mantan-pramugari
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7070423/anti-mainstream-wanita-ini-dapat-hantaran-makanan-di-hari-wisudanya
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069713/5-kopitiam-ini-punya-paket-sarapan-klasik-kopi-o-hingga-kaya-toast
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069785/gurih-medhok-hucap-khas-kuningan-yang-sederhana-dan-legendaris
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069783/ketahui-5-jenis-kopi-hitam-yang-nikmat-dan-aromanya-khas
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7069791/nasi-nol-kalori-populer-untuk-turunkan-bb-apakah-aman-dikonsumsi
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7070204/momen-kulineran-marshel-widianto-bareng-rekan-artis
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7070145/keseruan-sandra-dewi-saat-ngopi-di-melbourne-dan-makan-di-restoran-mewah
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069699/pria-ini-gagal-menangkan-tantangan-makan-meski-sudah-makan-4-500-kalori
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069033/5-restoran-ini-terpaksa-tutup-gegara-dapurnya-kotor-ada-tikus-hingga-kecoak
+Date: N/A
+Content: N/A
+URL: https://20.detik.com/detikupdate/20231203-231203080/pelestarian-kuliner-bulung-di-serangan-festival-2023
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069046/rekomendasi-5-kopitiam-modern-di-jakarta-yang-cocok-untuk-hangout
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069652/apes-pria-ini-muntah-muntah-usai-temukan-kecoak-dalam-ramennya
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069067/pecahkan-rekor-dunia-dua-pria-ini-pergi-ke-99-bar-dalam-sehari
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069064/5-kopitiam-kekinian-di-bogor-yang-ramai-disambangi-untuk-hangout
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069028/beli-pisang-goreng-rp-6-ribuan-pelanggan-kaget-bentuknya-mirip-ikan-bilis
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/pengalaman-bersantap/d-7069418/murah-meriah-ada-kopi-o-dan-nasi-lemak-ala-medan-di-kopitiam-ini
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069071/haru-pengantar-makanan-ini-berhasil-selamatkan-nyawa-pelanggannya
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/mie-dan-pasta/d-7068047/resep-spaghetti-tumis-seafood-dan-cabe-yang-pedas-menyengat-untuk-makan-malam
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069163/5-kuliner-menarik-di-fresh-market-bintaro-buat-jajan-akhir-pekan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/mie-dan-pasta/d-7067918/3-resep-mie-ayam-populer-yang-gurih-enak-dimakan-bareng-keluarga
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7069035/gede-banget-ada-bakso-rusuk-jumbo-di-warung-andalan-nex-carlos
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069161/selain-pakai-sumpit-telur-tornado-bisa-dibikin-dengan-cara-ini
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-kuliner/d-7069022/cappuccino-kering-tidak-seperti-yang-dibayangkan-ini-racikan-aslinya
+Date: N/A
+Content: N/A
+URL: https://www.detik.com/tag/50-resep-dan-tips-olahan-daging-kurban
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7071602/7-buah-penurun-kolesterol-tinggi-yang-enak-menyegarkan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7071571/5-minuman-sehat-ini-cocok-dikonsumsi-usai-makan-gorengan
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/info-sehat/d-7072294/wanita-ini-terapkan-metode-diet-90-30-50-yang-bikin-langsing
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7071949/dida-sinclair-mertua-idaman-yang-hobi-berkebun-dan-memasak
+Date: N/A
+Content: N/A
+URL: https://food.detik.com/foto-kuliner/d-7071852/senang-masak-jin-bts-coba-bikin-arak-dan-sajikan-daging-babi
+Date: N/A
+Content: N/A
+Data telah disimpan dalam file CSV: detik.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/detik.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-e644bfd6-7641-4839-a397-8e84feb83127" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nomor</th>
+      <th>Kategori</th>
+      <th>Judul Berita</th>
+      <th>Tanggal</th>
+      <th>Link</th>
+      <th>Konten</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>olahraga</td>
+      <td>komentar-valentino-rossi-lihat-marc-marquez-ga...</td>
+      <td>NaN</td>
+      <td>https://sport.detik.com/moto-gp/d-7068676/kome...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>olahraga</td>
+      <td>cari-desak-made-baru-fpti-gelar-kejurnas-panja...</td>
+      <td>NaN</td>
+      <td>https://sport.detik.com/sport-lain/d-7066828/c...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>olahraga</td>
+      <td>bagnaia-puas-dengan-motor-baru-ducati-tapi-bis...</td>
+      <td>NaN</td>
+      <td>https://sport.detik.com/moto-gp/d-7065304/bagn...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>olahraga</td>
+      <td>jonatan-christie-resmi-nikahi-shanju-eks-jkt48</td>
+      <td>NaN</td>
+      <td>https://sport.detik.com/g-sport/d-7067249/jona...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>olahraga</td>
+      <td>6-wakil-indonesia-di-bwf-world-tour-finals-2023</td>
+      <td>NaN</td>
+      <td>https://sport.detik.com/raket/d-7066950/6-waki...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>60</td>
+      <td>makanan</td>
+      <td>7-buah-penurun-kolesterol-tinggi-yang-enak-men...</td>
+      <td>NaN</td>
+      <td>https://food.detik.com/info-sehat/d-7071602/7-...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>61</td>
+      <td>makanan</td>
+      <td>5-minuman-sehat-ini-cocok-dikonsumsi-usai-maka...</td>
+      <td>NaN</td>
+      <td>https://food.detik.com/info-sehat/d-7071571/5-...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>62</td>
+      <td>makanan</td>
+      <td>wanita-ini-terapkan-metode-diet-90-30-50-yang-...</td>
+      <td>NaN</td>
+      <td>https://food.detik.com/info-sehat/d-7072294/wa...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>63</td>
+      <td>makanan</td>
+      <td>dida-sinclair-mertua-idaman-yang-hobi-berkebun...</td>
+      <td>NaN</td>
+      <td>https://food.detik.com/foto-kuliner/d-7071949/...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>64</td>
+      <td>makanan</td>
+      <td>senang-masak-jin-bts-coba-bikin-arak-dan-sajik...</td>
+      <td>NaN</td>
+      <td>https://food.detik.com/foto-kuliner/d-7071852/...</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>183 rows × 6 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e644bfd6-7641-4839-a397-8e84feb83127')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-e644bfd6-7641-4839-a397-8e84feb83127 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-e644bfd6-7641-4839-a397-8e84feb83127');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-bb333849-2b03-4666-bde8-70ddd4859c2d">
+  <button class="colab-df-quickchart" onclick="quickchart('df-bb333849-2b03-4666-bde8-70ddd4859c2d')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-bb333849-2b03-4666-bde8-70ddd4859c2d button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">def</span> <span class="nf">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">):</span>
+    <span class="c1"># Mengunduh halaman kategori</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gagal mengunduh halaman </span><span class="si">{</span><span class="n">category_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="c1"># Membuat objek BeautifulSoup</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Mencari tautan berita</span>
+    <span class="n">news_links</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">):</span>
+        <span class="n">link</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+        <span class="n">news_links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">news_links</span>
+
+<span class="c1"># Mapping URL kategori ke nama kategori</span>
+<span class="n">category_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;olahraga&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;travel&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">:</span> <span class="s1">&#39;makanan&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># Kategori yang akan di-crawl</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">category_mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="c1"># Menyiapkan file CSV</span>
+<span class="n">csv_file_path</span> <span class="o">=</span> <span class="s1">&#39;detik_newss.csv&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+    <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s1">&#39;Nomor&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">,</span> <span class="s1">&#39;Judul Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Link&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Crawl berita untuk setiap kategori</span>
+    <span class="k">for</span> <span class="n">category_url</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+        <span class="n">news_links</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">)</span>
+
+        <span class="c1"># Menyimpan hasil ke dalam file CSV</span>
+        <span class="n">category_name</span> <span class="o">=</span> <span class="n">category_mapping</span><span class="p">[</span><span class="n">category_url</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">link</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">news_links</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">category_name</span><span class="p">,</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">link</span><span class="p">])</span>
+
+<span class="c1"># Menampilkan pesan jika penyimpanan berhasil</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data telah disimpan dalam file CSV: </span><span class="si">{</span><span class="n">csv_file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data telah disimpan dalam file CSV: detik_newss.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/detik_newss.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&quot;/content/drive&quot;, force_remount=True).
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-a9237f00-4529-4f67-a32b-37c14057f908" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nomor</th>
+      <th>Kategori</th>
+      <th>Judul Berita</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>olahraga</td>
+      <td>komentar-valentino-rossi-lihat-marc-marquez-ga...</td>
+      <td>https://sport.detik.com/moto-gp/d-7068676/kome...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>olahraga</td>
+      <td>cari-desak-made-baru-fpti-gelar-kejurnas-panja...</td>
+      <td>https://sport.detik.com/sport-lain/d-7066828/c...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>olahraga</td>
+      <td>bagnaia-puas-dengan-motor-baru-ducati-tapi-bis...</td>
+      <td>https://sport.detik.com/moto-gp/d-7065304/bagn...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>olahraga</td>
+      <td>jonatan-christie-resmi-nikahi-shanju-eks-jkt48</td>
+      <td>https://sport.detik.com/g-sport/d-7067249/jona...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>olahraga</td>
+      <td>6-wakil-indonesia-di-bwf-world-tour-finals-2023</td>
+      <td>https://sport.detik.com/raket/d-7066950/6-waki...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>59</td>
+      <td>makanan</td>
+      <td>wanita-ini-terapkan-metode-diet-90-30-50-yang-...</td>
+      <td>https://food.detik.com/info-sehat/d-7072294/wa...</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>60</td>
+      <td>makanan</td>
+      <td>ramai-soal-stok-nasi-beku-berapa-lama-nasi-bis...</td>
+      <td>https://food.detik.com/info-kuliner/d-7071566/...</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>61</td>
+      <td>makanan</td>
+      <td>7-buah-penurun-kolesterol-tinggi-yang-enak-men...</td>
+      <td>https://food.detik.com/info-sehat/d-7071602/7-...</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>62</td>
+      <td>makanan</td>
+      <td>5-fakta-racikan-kopi-arab-yang-kaya-rempah-dan...</td>
+      <td>https://food.detik.com/info-kuliner/d-7071650/...</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>63</td>
+      <td>makanan</td>
+      <td>5-minuman-sehat-ini-cocok-dikonsumsi-usai-maka...</td>
+      <td>https://food.detik.com/info-sehat/d-7071571/5-...</td>
+    </tr>
+  </tbody>
+</table>
+<p>182 rows × 4 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a9237f00-4529-4f67-a32b-37c14057f908')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-a9237f00-4529-4f67-a32b-37c14057f908 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-a9237f00-4529-4f67-a32b-37c14057f908');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-fec246a2-db97-4261-ae00-c45941aeb5a9">
+  <button class="colab-df-quickchart" onclick="quickchart('df-fec246a2-db97-4261-ae00-c45941aeb5a9')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-fec246a2-db97-4261-ae00-c45941aeb5a9 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">def</span> <span class="nf">crawl_detik_news</span><span class="p">(</span><span class="n">category_url</span><span class="p">,</span> <span class="n">category_name</span><span class="p">,</span> <span class="n">total_data</span><span class="p">):</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://www.detik.com/&#39;</span>
+
+    <span class="n">news_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">total_data</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">category_url</span><span class="si">}</span><span class="s1">?page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+            <span class="n">articles</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">article</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">articles</span><span class="p">):</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+
+                <span class="c1"># Get content of the news</span>
+                <span class="n">content_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">content_response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+                    <span class="n">content_soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content_response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+                    <span class="n">content_paragraphs</span> <span class="o">=</span> <span class="n">content_soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">content_paragraphs</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+                <span class="n">news_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;number&#39;</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">page</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="n">category_name</span><span class="p">,</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                    <span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">link</span><span class="p">,</span>
+                    <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">content</span>
+                <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">news_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_to_csv</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;detik_news_with_content.csv&#39;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+        <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">]</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">fieldnames</span><span class="p">)</span>
+
+        <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">total_data_per_category</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">sport_news</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;olahraga&#39;</span><span class="p">,</span> <span class="n">total_data_per_category</span><span class="p">)</span>
+    <span class="n">travel_news</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">,</span> <span class="n">total_data_per_category</span><span class="p">)</span>
+    <span class="n">food_news</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;makanan&#39;</span><span class="p">,</span> <span class="n">total_data_per_category</span><span class="p">)</span>
+
+    <span class="n">all_news</span> <span class="o">=</span> <span class="n">sport_news</span> <span class="o">+</span> <span class="n">travel_news</span> <span class="o">+</span> <span class="n">food_news</span>
+    <span class="n">save_to_csv</span><span class="p">(</span><span class="n">all_news</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-531ba53f582c&gt;</span> in <span class="ni">&lt;cell line: 10&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">total_data_per_category</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>     <span class="n">sport_news</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="s1">&#39;https://sport.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;olahraga&#39;</span><span class="p">,</span> <span class="n">total_data_per_category</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">travel_news</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="s1">&#39;https://travel.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;travel&#39;</span><span class="p">,</span> <span class="n">total_data_per_category</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">food_news</span> <span class="o">=</span> <span class="n">crawl_detik_news</span><span class="p">(</span><span class="s1">&#39;https://food.detik.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;makanan&#39;</span><span class="p">,</span> <span class="n">total_data_per_category</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-1-065e56071e1e&gt;</span> in <span class="ni">crawl_detik_news</span><span class="nt">(category_url, category_name, total_data)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+<span class="g g-Whitespace">     </span><span class="mi">18</span>             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">article</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">articles</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>                 <span class="n">title</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>                 <span class="n">link</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> 
+
+<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;get_text&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -717,15 +2201,6 @@ https://food.detik.com/foto-kuliner/d-7071413/cafe-batavia-kafe-zaman-kolonial-y
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Crawling%20Berita%20Online.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Crawling Berita Online</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
